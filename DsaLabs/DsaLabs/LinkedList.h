@@ -11,7 +11,7 @@ typedef struct list_element_t {
 
 typedef struct{
 
-	ListElement *head;
+	struct list_element_t *head;
 	int size;
 
 }List;
@@ -20,7 +20,7 @@ typedef struct{
 List* createList();
 
 //creates new ListElement
-ListElement* newListElement(int k);
+ListElement* newListElement();
 
 //prints out if list is empty or nor ( Does Head points to itself?)
 isListEmpty(List*);

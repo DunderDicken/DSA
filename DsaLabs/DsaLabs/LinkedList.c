@@ -1,11 +1,12 @@
 #include "LinkedList.h"
 #include <stdio.h>
+#include <stdlib.h>
 
 
 List* createList()
 {
 	List* newList = (List*)malloc(sizeof(List));
-	newList->head = malloc(sizeof(ListElement));
+	newList->head = (ListElement*)malloc(sizeof(ListElement));
 
 	newList->head->next = newList->head;
 	newList->head->prev = newList->head;
@@ -14,12 +15,24 @@ List* createList()
 
 	return newList;
 }
-
+/*
 ListElement* newListElement(int k)
 {
 	ListElement* newElement = malloc(sizeof(ListElement));
 
 	newElement->key = k;
+	newElement->next = NULL;
+	newElement->prev = NULL;
+
+	return newElement;
+}
+*/
+
+ListElement* newListElement()
+{
+	ListElement* newElement = malloc(sizeof(ListElement));
+
+	newElement->key = NULL;
 	newElement->next = NULL;
 	newElement->prev = NULL;
 
@@ -38,13 +51,15 @@ insert(List * list, ListElement * listElement)
 }
 
 
-isListEmpty(List* l)
+int isListEmpty(List* l)
 {
 	if (l->head->next == l->head)
 	{
 		printf("List is empty \n");
+		return 0;
 	}
-	else
-		printf("List is NOT empty ");
+
+	printf("List is NOT empty \n");
+	return 1;
 }
 
