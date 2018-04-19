@@ -15,24 +15,23 @@ List* createList()
 
 	return newList;
 }
-/*
-ListElement* newListElement(int k)
-{
-	ListElement* newElement = malloc(sizeof(ListElement));
-
-	newElement->key = k;
-	newElement->next = NULL;
-	newElement->prev = NULL;
-
-	return newElement;
-}
-*/
 
 ListElement* newListElement()
 {
 	ListElement* newElement = malloc(sizeof(ListElement));
 
 	newElement->key = NULL;
+	newElement->next = NULL;
+	newElement->prev = NULL;
+
+	return newElement;
+}
+
+ListElement * newListElementWithKey(int k)
+{
+	ListElement* newElement = malloc(sizeof(ListElement));
+
+	newElement->key = k;
 	newElement->next = NULL;
 	newElement->prev = NULL;
 

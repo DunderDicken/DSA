@@ -19,8 +19,11 @@ typedef struct{
 //creates new empty list wich points to itself
 List* createList();
 
-//creates new ListElement
+//creates new empty ListElement
 ListElement* newListElement();
+
+//creates new ListElement with key
+ListElement* newListElementWithKey(int k);
 
 //prints out if list is empty or nor ( Does Head points to itself?)
 isListEmpty(List*);

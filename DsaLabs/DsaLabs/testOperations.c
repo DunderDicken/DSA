@@ -13,6 +13,7 @@ int main() {
 	el1->key = 3;
 
 	insert(list1, el1);
+	
 
 	isListEmpty(list1);
 
