@@ -11,7 +11,7 @@ typedef struct list_element_t {
 
 typedef struct{
 
-	struct list_element_t *head;
+	struct list_element_t *nil;
 	int size;
 
 }List;
@@ -28,4 +28,38 @@ ListElement* newListElementWithKey(int k);
 //prints out if list is empty or nor ( Does Head points to itself?)
 isListEmpty(List*);
 
+
+//OPERATIONS
+
+//Inserts element to list
 insert(List* list, ListElement* listElement);
+
+//Returns a pointer to a element in a list
+ListElement* listSearch(List* list, int k);
+
+//Deletes element listElement from given list
+deleteElement(List* list, ListElement* listElement);
+
+//Returns a pointer to the element with the smalles key in the list
+ListElement* minimum(List* list);
+
+//Returns a pointer to the element with the largest key in the list
+ListElement* maximum(List* list);
+
+//Returns a pointer to the next larger element from given element in a list
+ListElement* successor(List* list, ListElement* listElement);
+
+//Returns a pointer to the next smaller element from given element in a list
+ListElement* predecessor(List* list, ListElement* listElement);
+
+
+/*
+
+
+PREDECESSOR.S; x/
+A query that, given an element x whose key is from a totally ordered set S,
+returns a pointer to the next smaller element in S, or NIL if x is the minimum
+element.Part III Data Structures 231
+In
+
+*/
