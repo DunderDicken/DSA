@@ -146,6 +146,7 @@
     <ClCompile Include="LinkedList.c" />
     <ClCompile Include="Stack.c" />
     <ClCompile Include="testOperations.c" />
+    <ClCompile Include="TestPredecessor.c" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="ex_n.txt" />

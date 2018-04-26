@@ -42,12 +42,10 @@ int isListEmpty(List* lst)
 {
 	if (lst->nil->next == lst->nil)
 	{
-		printf("List is empty \n");
-		return 0;
+		return 1;
 	}
 
-	printf("List is NOT empty \n");
-	return 1;
+	return 0;
 }
 
 insert(List * list, ListElement * listElement)

@@ -25,8 +25,8 @@ ListElement* newListElement();
 //creates new ListElement with key
 ListElement* newListElementWithKey(int k);
 
-//prints out if list is empty or nor ( Does Head points to itself?)
-isListEmpty(List*);
+//Returns 0 if list is empty, otherwise returns 1 ( Does nil points to itself?)
+int isListEmpty(List*);
 
 
 //OPERATIONS
