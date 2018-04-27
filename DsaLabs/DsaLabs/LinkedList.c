@@ -57,6 +57,8 @@ insert(List * list, ListElement * listElement)
 	list->nil->next = listElement;
 
 	listElement->prev = list->nil;
+
+	list->size++;
 }
 
 ListElement * listSearch(List * list, int k)

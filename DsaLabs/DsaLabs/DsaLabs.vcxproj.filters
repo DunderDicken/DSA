@@ -29,16 +29,17 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="ex_n.txt">
-      <Filter>Resource Files</Filter>
-    </Text>
-  </ItemGroup>
-  <ItemGroup>
     <ClInclude Include="LinkedList.h">
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="Stack.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ex_1.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="ex_2.txt" />
   </ItemGroup>
 </Project>

@@ -149,7 +149,8 @@
     <ClCompile Include="TestPredecessor.c" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="ex_n.txt" />
+    <Text Include="ex_1.txt" />
+    <Text Include="ex_2.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="LinkedList.h" />

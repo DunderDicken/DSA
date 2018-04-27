@@ -2,32 +2,26 @@
 #include <stdlib.h>
 
 #include "LinkedList.h"
+#include "Stack.h"
 
-#define NUM_TEST 10
+#define NUM_TEST 3
 
-void testInsert(List* lst);
-void testpredecessor(List* lst);
+void testInsert();
+
+void testStack();
 
 int main() {
 
-	List* list1 = createList();
-
-	//testInsert(list1);
-	testPredecessor();
+	//testInsert();
+	testStack();
 	
-
-	
-
-	free(list1);
-
 	return 0;
 }
 
 
-
-void testInsert(List * lst)
+void testInsert()
 {
-	int test[NUM_TEST] = { 1,2,3,4,5,6,7,8,9,10 };
+	List* lst = createList();
 	int return_value;
 
 	//Test if the list is empty
@@ -39,9 +33,9 @@ void testInsert(List * lst)
 	}
 
 	//Insert 10 new listElements to the list
-	for (int i = 0; i < NUM_TEST; i++)
+	for (int i = 1; i <= NUM_TEST; i++)
 	{
-		insert(lst, newListElementWithKey(test[i]));
+		insert(lst, newListElementWithKey(i));
 	}
 
 	//Test if the list is empty
@@ -51,25 +45,63 @@ void testInsert(List * lst)
 		printf("Test failed. List was empty \n");
 	}
 
-	ListElement* tmp = lst->nil->prev;
-	int i = 0;
-
-//Check if all keys in list is added correctly
-	while (tmp != lst->nil)
-	{
-		return_value = tmp->key;
-
-		if (return_value != test[i])
-		{
-			printf("Test failed. Missing number \n");
-		}
-		tmp = tmp->prev;
-		i++;
-		
-	}
+//	listelement* tmp = lst->nil->prev;
+//	int i = 0;
+//
+////check if all keys in list is added correctly
+//	while (tmp != lst->nil)
+//	{
+//		return_value = tmp->key;
+//
+//		if (return_value != test[i])
+//		{
+//			printf("test failed. missing number \n");
+//		}
+//		tmp = tmp->prev;
+//		i++;
+//		
+//	}
 	
 }
 
-void testpredecessor(List* lst) {
 
+void testStack()
+{
+	Stack* stack1 = createStack();
+	int test[NUM_TEST];
+	for (int i = 0; i < NUM_TEST; i++)
+	{
+		test[i] = rand() % 100;
+	}
+
+	//Try pop the empty stack
+	int* return_value = pop(stack1);
+	if (return_value == NULL)
+	{
+		printf("Underflow error! Stack is empty \n");
+	}
+
+	//Push NUM_TEST number of elements to the stack
+	for (int i = 0; i < NUM_TEST; i++)
+	{
+		push(stack1, test[i]);
+	}
+
+	//Pop all elements and compare the order
+	int wrong = 0;
+
+	for (int i = 0; i < NUM_TEST; i++)
+	{
+		return_value = pop(stack1);
+
+		if (*return_value != test[3])
+		{
+			wrong++;
+		}
+	
+	}
+
+	
+
+	free(stack1);
 }
