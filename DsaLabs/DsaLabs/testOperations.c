@@ -4,7 +4,7 @@
 #include "LinkedList.h"
 #include "Stack.h"
 
-#define NUM_TEST 3
+#define NUM_TEST 10
 
 void testInsert();
 
@@ -71,14 +71,14 @@ void testStack()
 	int test[NUM_TEST];
 	for (int i = 0; i < NUM_TEST; i++)
 	{
-		test[i] = rand() % 100;
+		test[i] = i+1;
 	}
 
 	//Try pop the empty stack
 	int* return_value = pop(stack1);
-	if (return_value == NULL)
+	if (return_value != NULL)
 	{
-		printf("Underflow error! Stack is empty \n");
+		printf(" Expected Underflow error, Stack is NOT empty \n");
 	}
 
 	//Push NUM_TEST number of elements to the stack
@@ -87,6 +87,10 @@ void testStack()
 		push(stack1, test[i]);
 	}
 
+	//Uncommenting this will give an error in the next step.
+	//int* tmp = pop(stack1);
+	//push(stack1, tmp + 1);
+
 	//Pop all elements and compare the order
 	int wrong = 0;
 
@@ -94,11 +98,16 @@ void testStack()
 	{
 		return_value = pop(stack1);
 
-		if (*return_value != test[3])
+		//Check if returned value is equal to reversed order numbers.
+		if (*return_value != test[(NUM_TEST-1) - i])
 		{
 			wrong++;
 		}
 	
+	}
+	if (wrong != 0)
+	{
+		printf(" Error! POP returned value in wrong order. \n");
 	}
 
 	

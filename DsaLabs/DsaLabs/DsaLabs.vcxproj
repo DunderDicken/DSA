@@ -151,6 +151,7 @@
   <ItemGroup>
     <Text Include="ex_1.txt" />
     <Text Include="ex_2.txt" />
+    <Text Include="ex_3.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="LinkedList.h" />

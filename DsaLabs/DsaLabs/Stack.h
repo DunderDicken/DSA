@@ -7,10 +7,18 @@ typedef struct {
 	
 }Stack;
 
+typedef struct stack_with_array
+{
+	int* top;
+
+
+}StackArray;
+
 //////Operations
 
 //Creates an empty Stack
 Stack * createStack();
+StackArray* createStackArray(int size);
 
 //Check if stack is empty, returns 1 if stack is empty
 int isStackEmpty(Stack* stack);

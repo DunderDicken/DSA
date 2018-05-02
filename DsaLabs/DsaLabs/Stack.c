@@ -12,6 +12,12 @@ Stack * createStack()
 	return tmp_stack;
 }
 
+StackArray * createStackArray(int size)
+{
+	int array = (int*)calloc(size, sizeof(int));
+	return NULL;
+}
+
 
 int isStackEmpty(Stack* stack)
 {

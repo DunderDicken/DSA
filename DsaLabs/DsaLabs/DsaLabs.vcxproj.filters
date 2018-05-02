@@ -40,6 +40,11 @@
     <Text Include="ex_1.txt">
       <Filter>Resource Files</Filter>
     </Text>
-    <Text Include="ex_2.txt" />
+    <Text Include="ex_2.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="ex_3.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
   </ItemGroup>
 </Project>
