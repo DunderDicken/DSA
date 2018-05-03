@@ -30,6 +30,9 @@
     <ClCompile Include="StackArray.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Que.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="LinkedList.h">
@@ -41,6 +44,9 @@
     <ClInclude Include="StackArray.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="Que.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ex_1.txt">
@@ -50,6 +56,12 @@
       <Filter>Resource Files</Filter>
     </Text>
     <Text Include="ex_3.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="ex_4.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="ex_5.txt">
       <Filter>Resource Files</Filter>
     </Text>
   </ItemGroup>

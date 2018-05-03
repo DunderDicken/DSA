@@ -4,19 +4,24 @@
 #include "LinkedList.h"
 #include "Stack.h"
 #include "StackArray.h"
+#include "Que.h"
 
-#define NUM_TEST 3
+#define NUM_TEST 50
 
 void testInsert();
 void testStack();
 void testArrayStack();
+void testQueList();
 
 int main() {
 
 	//testInsert();
 	//testStack();
-	testArrayStack();
+	//testArrayStack();
+	testQueList();
+	
 
+	getchar();
 	return 0;
 }
 
@@ -89,12 +94,12 @@ void testStack()
 		push(stack1, test[i]);
 	}
 
-	//Uncommenting this will give an error in the next step.
+	//Uncommenting this should give an error in the next step.
 	//int* tmp = pop(stack1);
 	//push(stack1, tmp + 1);
 
 	//Pop all elements and compare the order
-	int wrong = 0;
+	int wrongNumbers = 0;
 
 	for (int i = 0; i < NUM_TEST; i++)
 	{
@@ -103,17 +108,17 @@ void testStack()
 		//Check if returned value is equal to reversed order numbers.
 		if (*return_value != test[(NUM_TEST-1) - i])
 		{
-			wrong++;
+			wrongNumbers++;
 		}
 	
 	}
-	if (wrong != 0)
+	if (wrongNumbers != 0)
 	{
 		printf(" Error! POP returned value in wrong order. \n");
 	}
 
 	
-
+	getchar();
 	free(stack1);
 }
 
@@ -134,8 +139,12 @@ void testArrayStack()
 		pushStackArray(stack, i+1);
 	}
 
+	//Uncommenting this should give an error in the next step.
+	/*popStackArray(stack);
+	pushStackArray(stack, (NUM_TEST +1 ));*/
+
 	//Pop all elements and compare the order
-	int wrong = 0;
+	int wrongNumbers = 0;
 
 	for (int i = 0; i < NUM_TEST; i++)
 	{
@@ -144,20 +153,66 @@ void testArrayStack()
 		//Check if returned value is equal to reversed order numbers.
 		if (*return_value != (NUM_TEST - i))
 		{
-			wrong++;
+			wrongNumbers++;
 		}
 
 	}
-	if (wrong != 0)
+	if (wrongNumbers != 0)
 	{
 		printf(" Error! POP returned value in wrong order. \n");
 	}
 
-	for (int i = 0; i < stack->size + 100; i++)
+	// Try to push elements until the array is filled and then push another element
+	for (int i = 0; i < stack->size; i++)
 	{
-		pushStackArray(stack, i + 1);
-		printf("Pop nr: %d returned: %d  \n", i, stack->data[i]);
+		pushStackArray(stack,(i+1));
+	}
+	pushStackArray(stack, stack->size + 1);
 
+	getchar();
+	free(stack);
+}
+
+void testQueList() {
+
+	QueList* Q = createQueList();
+
+	//Try to dequeue empty que, expected to return NULL beacuse que is empty
+	int* return_value = dequeue(Q);
+	if (return_value != NULL)
+	{
+		printf(" Expected Underflow error, Que is NOT empty \n");
 	}
 
+	//Enqueue NUM_TEST number of elements to que
+	for (int i = 0; i < NUM_TEST; i++)
+	{
+		enqueue(Q, i+1);
+	}
+
+	////Uncommenting this should give an error in the next step:
+	//dequeue(Q);
+	//enqueue(Q, 1);
+	
+
+	//Try to dequeue all elements and check that the order is correct
+	int wrongNumbers = 0;
+
+	for (int i = 0; i < NUM_TEST; i++)
+	{
+		return_value = dequeue(Q);
+		//printf("Return value: %d  \n", *return_value);
+
+		if (*return_value != (i+1))
+		{
+			wrongNumbers++;
+		}
+	}
+	if (wrongNumbers != 0)
+	{
+		printf(" Error! Dequeue returned value in wrong order. \n");
+	}
+
+	
+	free(Q);
 }

@@ -1,0 +1,7 @@
+The Que with linked list is implemented in the headerfile "Que.h" and the file "Que.c" and the tests are implemented in the main file "testOperations.c".
+
+The test of the Que is implemented as a function in "testOperations.c" file called "testQueList()". Uncommenting "testQueList()" in the main function
+will run the tests.
+
+The tests are dependent on the defined number NUM_TEST, the integer value of NUM_TEST will determine how many numbers are enqueued and dequeued during the test.
+There is explaining comments in the "testQueList()" function. 

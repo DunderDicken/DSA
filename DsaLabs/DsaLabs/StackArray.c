@@ -26,9 +26,24 @@ int isStackArrayEmpty(StackArray * stack)
 	return FALSE;
 }
 
+int isStackArrayFull(StackArray * stack)
+{
+	if (stack->top >= stack->size)
+	{
+		return TRUE;
+	}
+	return FALSE;
+}
+
 pushStackArray(StackArray * stack, int k)
 {
-	
+	if (isStackArrayFull(stack) == TRUE)
+	{
+		printf("Overflow error! Stack is full \n");
+		printf("Could not push key: %d . \n", k);
+		return;
+	}
+
 	stack->data[stack->top] = k;
 	stack->top++;
 	

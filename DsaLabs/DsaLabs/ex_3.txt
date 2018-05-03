@@ -1,0 +1,7 @@
+The stack is implemented in the headerfile "StackArray.h" and the file "StackArray.c" and the tests are implemented in the main file "testOperations.c".
+
+The test of the stacks is implemented as a function in "testOperations.c" file called "testStackArray()". Uncommenting "testStackArray()" in the main function
+will run the tests.
+
+The tests are dependent on the defined number NUM_TEST, the integer value of NUM_TEST will determine how many numbers are popped ande pusched during the test.
+There is explaining comments in the "testStackArray()" function. 

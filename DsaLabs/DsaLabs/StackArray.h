@@ -14,6 +14,9 @@ StackArray* createStackArray(int size);
 //Check if stack is empty, returns 1 if stack is empty
 int isStackArrayEmpty(StackArray* stack);
 
+//Check if stack is full, returns 1 if stack is full
+int isStackArrayFull(StackArray * stack);
+
 //Push a stack Element with the given key to the top of the stack
 pushStackArray(StackArray* stack, int k);
 
