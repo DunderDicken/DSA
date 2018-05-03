@@ -1,0 +1,50 @@
+#include "StackArray.h"
+#include <stdio.h>
+#include <stdlib.h>
+
+#define TRUE 1
+#define FALSE 0
+
+StackArray * createStackArray(int size)
+{
+	StackArray* tmp_stack = (StackArray*)malloc(sizeof(StackArray));
+
+	tmp_stack->top = 0;
+	tmp_stack->size = size;
+	tmp_stack->data = (int*)malloc(size * sizeof(int));
+
+	return tmp_stack;
+}
+
+
+int isStackArrayEmpty(StackArray * stack)
+{
+	if (stack->top == 0)
+	{
+		return TRUE;
+	}
+	return FALSE;
+}
+
+pushStackArray(StackArray * stack, int k)
+{
+	
+	stack->data[stack->top] = k;
+	stack->top++;
+	
+}
+
+int* popStackArray(StackArray * stack)
+{
+	if (isStackArrayEmpty(stack) == TRUE)
+	{
+		return NULL;
+	}
+	stack->top--;
+
+	int* returnedKey = malloc(sizeof(int));
+
+	*returnedKey = stack->data[stack->top];
+
+	return returnedKey;
+}

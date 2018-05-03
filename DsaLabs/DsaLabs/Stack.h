@@ -7,18 +7,12 @@ typedef struct {
 	
 }Stack;
 
-typedef struct stack_with_array
-{
-	int* top;
 
-
-}StackArray;
 
 //////Operations
 
-//Creates an empty Stack
+//Creates an empty Stack with linked list
 Stack * createStack();
-StackArray* createStackArray(int size);
 
 //Check if stack is empty, returns 1 if stack is empty
 int isStackEmpty(Stack* stack);
@@ -28,3 +22,4 @@ push(Stack* stack, int k);
 
 //Returns the top element of the stack and then deletes it from the stack
 int* pop(Stack* stack);
+

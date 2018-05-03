@@ -27,12 +27,18 @@
     <ClCompile Include="TestPredecessor.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="StackArray.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="LinkedList.h">
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="Stack.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="StackArray.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>

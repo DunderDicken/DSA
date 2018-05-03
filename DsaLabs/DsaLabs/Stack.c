@@ -2,6 +2,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#define TRUE 1
+#define FALSE 0
 
 Stack * createStack()
 {
@@ -12,12 +14,6 @@ Stack * createStack()
 	return tmp_stack;
 }
 
-StackArray * createStackArray(int size)
-{
-	int array = (int*)calloc(size, sizeof(int));
-	return NULL;
-}
-
 
 int isStackEmpty(Stack* stack)
 {
@@ -25,10 +21,13 @@ int isStackEmpty(Stack* stack)
 }
 
 
+
 push(Stack* stack, int k)
 {
 	insert(stack->top, newListElementWithKey(k));
 }
+
+
 
 int* pop(Stack * stack)
 {
@@ -46,4 +45,6 @@ int* pop(Stack * stack)
 	return returnedKey;
 
 }
+
+
 

@@ -145,6 +145,7 @@
   <ItemGroup>
     <ClCompile Include="LinkedList.c" />
     <ClCompile Include="Stack.c" />
+    <ClCompile Include="StackArray.c" />
     <ClCompile Include="testOperations.c" />
     <ClCompile Include="TestPredecessor.c" />
   </ItemGroup>
@@ -156,6 +157,7 @@
   <ItemGroup>
     <ClInclude Include="LinkedList.h" />
     <ClInclude Include="Stack.h" />
+    <ClInclude Include="StackArray.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
