@@ -1,5 +1,10 @@
+/*
+	This program implements a stack with an array.
+*/
+
 #pragma once
 
+/* STRUCTS */
 typedef struct stack_with_array
 {
 	int* data;
@@ -8,8 +13,12 @@ typedef struct stack_with_array
 
 }StackArray;
 
+/* CREATE NEW STACK */
+
 //Creates an empty Stack with array
 StackArray* createStackArray(int size);
+
+/* OPERATIONS */
 
 //Check if stack is empty, returns 1 if stack is empty
 int isStackArrayEmpty(StackArray* stack);

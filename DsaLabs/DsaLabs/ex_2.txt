@@ -1,8 +1,25 @@
-The stack is implemented in the headerfile "Stack.h" and the file "Stack.c" and the tests are implemented in the main file "testOperations.c".
 
-The test of the stacks is implemented as a function in "testOperations.c" file called "testStack()". Uncommenting "testStack()" in the main function
-will run the tests.
+EXERCISE 2.
+Stack with linked list.
 
-The tests are dependent on the defined number NUM_TEST, the integer value of NUM_TEST will determine how many numbers are popped ande pusched during the test.
-There is explaining comments in the "testSTack()" function. 
+- The stack is implemented in the files "Stack.h" and "Stack.c".
+- The tests for the stack operations are implemented in the file "testOperations.c".
+- The tests are implemented in the function "testStack()".  
+
+During the creation of the stack operations I used the debugger to go through the
+functions step by step, to ensure they worked correctly. The pop and push functions
+rely heavily on functions from excercise 1, so the debugging went much faster 
+than in excercise 1. After the pop and push operations where created and stepped 
+through, I wrote a simple test function to simplify further testing.
+
+This test i written in the function "testStack()", and uncommenting it in
+the main() function of the file "testOperations().c" will run the test. The
+test is dependent on the predefined integer value "NUM_TEST", wich will 
+indicate the numbers of elements pushed to the stack in the beginning of the 
+test and later poped. 
+
+There is comments throughout the test function to explain what is tested and how.
+The test is only suppose to print somthing to the output if anything goes wrong.
+
+
 

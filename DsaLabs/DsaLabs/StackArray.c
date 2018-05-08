@@ -2,9 +2,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+/* Constants */
 #define TRUE 1
 #define FALSE 0
 
+/* Creat new stack */
 StackArray * createStackArray(int size)
 {
 	StackArray* tmp_stack = (StackArray*)malloc(sizeof(StackArray));
@@ -16,6 +18,7 @@ StackArray * createStackArray(int size)
 	return tmp_stack;
 }
 
+/* OPERATIONS */
 
 int isStackArrayEmpty(StackArray * stack)
 {

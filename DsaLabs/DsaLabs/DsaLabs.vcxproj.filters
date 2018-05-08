@@ -24,9 +24,6 @@
     <ClCompile Include="Stack.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="TestPredecessor.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="StackArray.c">
       <Filter>Source Files</Filter>
     </ClCompile>

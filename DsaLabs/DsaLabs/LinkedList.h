@@ -1,5 +1,10 @@
+/*	
+	This implements a doubly linked list with a sentinel. 
+	The sentinel is called "nil" in the List struct.
+*/
 #pragma once
 
+/*  STRUCTS  */
 
 typedef struct list_element_t {
 
@@ -16,7 +21,9 @@ typedef struct{
 
 }List;
 
-//creates new empty list wich points to itself
+/* CREATE NEW ELEMENTS AND LISTS */
+
+//creates new empty list (Nil points to itself)
 List* createList();
 
 //creates new empty ListElement
@@ -29,12 +36,12 @@ ListElement* newListElementWithKey(int k);
 int isListEmpty(List*);
 
 
-//OPERATIONS
+/* DYNAMIC SET OPERATIONS */
 
-//Inserts element to list
+//Inserts given element to given list
 insert(List* list, ListElement* listElement);
 
-//Returns a pointer to a element in a list
+//Returns a pointer to a element in a given list with given key
 ListElement* listSearch(List* list, int k);
 
 //Deletes element listElement from given list
@@ -51,15 +58,3 @@ ListElement* successor(List* list, ListElement* listElement);
 
 //Returns a pointer to the next smaller element from given element in a list
 ListElement* predecessor(List* list, ListElement* listElement);
-
-
-/*
-
-
-PREDECESSOR.S; x/
-A query that, given an element x whose key is from a totally ordered set S,
-returns a pointer to the next smaller element in S, or NIL if x is the minimum
-element.Part III Data Structures 231
-In
-
-*/

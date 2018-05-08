@@ -1,7 +1,23 @@
-The stack is implemented in the headerfile "StackArray.h" and the file "StackArray.c" and the tests are implemented in the main file "testOperations.c".
 
-The test of the stacks is implemented as a function in "testOperations.c" file called "testStackArray()". Uncommenting "testStackArray()" in the main function
-will run the tests.
+EXERCISE 3.
+Stack with array.
 
-The tests are dependent on the defined number NUM_TEST, the integer value of NUM_TEST will determine how many numbers are popped ande pusched during the test.
-There is explaining comments in the "testStackArray()" function. 
+- The stack is implemented in the files "StackArray.h" and "StackArray.c".
+- The tests for the stack operations are implemented in the file "testOperations.c".
+- The tests are implemented in the function "testArrayStack()".  
+
+During the creation of the stack operations I used the debugger to go through the
+functions step by step, to ensure they worked correctly. After the operations 
+where created and stepped through, I wrote a simple test function to simplify 
+further testing.
+
+This test i written in the function "testArrayStack()", and uncommenting it in
+the main() function of the file "testOperations().c" will run the test. The
+test is dependent on the predefined integer value "NUM_TEST", wich will 
+indicate the numbers of elements pushed to the stack in the beginning of the 
+test and later poped. 
+
+There is comments throughout the test function to explain what is tested and how.
+The test is only suppose to print somthing to the output if anything goes wrong 
+and in the end where an Overflow error is expected.
+

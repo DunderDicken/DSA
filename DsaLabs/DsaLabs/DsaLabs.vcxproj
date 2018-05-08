@@ -148,7 +148,6 @@
     <ClCompile Include="Stack.c" />
     <ClCompile Include="StackArray.c" />
     <ClCompile Include="testOperations.c" />
-    <ClCompile Include="TestPredecessor.c" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="ex_1.txt" />
