@@ -144,7 +144,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="LinkedList.c" />
-    <ClCompile Include="Que.c" />
+    <ClCompile Include="Queue.c" />
     <ClCompile Include="Stack.c" />
     <ClCompile Include="StackArray.c" />
     <ClCompile Include="testOperations.c" />
@@ -158,7 +158,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="LinkedList.h" />
-    <ClInclude Include="Que.h" />
+    <ClInclude Include="Queue.h" />
     <ClInclude Include="Stack.h" />
     <ClInclude Include="StackArray.h" />
   </ItemGroup>

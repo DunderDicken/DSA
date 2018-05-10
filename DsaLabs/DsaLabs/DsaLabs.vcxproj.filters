@@ -27,7 +27,7 @@
     <ClCompile Include="StackArray.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Que.c">
+    <ClCompile Include="Queue.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -41,7 +41,7 @@
     <ClInclude Include="StackArray.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="Que.h">
+    <ClInclude Include="Queue.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -1,0 +1,39 @@
+
+EXERCISE 5.
+Queue with an array.
+
+- The queue is implemented in the files "Queue.h" and "Queue.c".
+- The tests for the queue operations are implemented in the file "testOperations.c".
+- The tests are implemented in the function "testQueueList()".   
+
+The queue structs and functions for both excercise 4 and 5 are in these files,
+it is the "QueueArray" struct and functions that is a part of this exercise.
+
+During the creation of all the dynamic set operations I used the debugger to go 
+through the functions step by step, to ensure they worked correctly. After all
+the operations where created and stepped through, I started writing a test 
+function for all the different operations.
+
+This test i written in the function "testLinkedList()", and uncommenting it in
+the main() function of the file "testOperations().c" will run the test. The 
+test is dependent on the predefined value "NUM_TEST", wich will indicate the 
+numbers of elements inserted to the list in the beginning of the test.
+
+The test is divided into 6 different smaller tests, to test all the different operations.
+There is comments throughout the test to explain what is tested and how. The test
+is only suppose to print somthing to the output if anything goes wrong, except in
+the end of the test. There is also a simple counter that will increase by one for
+every failed test.
+
+I thought it was very difficult to write a good test, but I hope this will be
+sufficient.
+
+
+
+Exercise 5 | Queues II
+Implement a queue with an array (pp.235).
+• Use dequeue on an empty queue (underflow error).
+• Enqueue a few items and then dequeue them. Confirm that the output order is the same as
+the input order.
+• Enqueue elements until the internal array is completely filled and enqueue another element
+(overflow error).

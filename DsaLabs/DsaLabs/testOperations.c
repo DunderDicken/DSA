@@ -5,10 +5,10 @@
 #include "LinkedList.h"
 #include "Stack.h"
 #include "StackArray.h"
-#include "Que.h"
+#include "Queue.h"
 
 /* Constants */
-#define NUM_TEST 5  // This defines how many elements will be inserted, pusched etc..
+#define NUM_TEST 3  // This defines how many elements will be inserted, pusched, enqueued etc..
 #define TRUE 1
 #define FALSE 0
 
@@ -16,7 +16,8 @@
 void testLinkedLIst();
 void testStack();
 void testArrayStack();
-void testQueList();
+void testQueueList();
+void testQueueArray();
 
 int main() {
 
@@ -25,8 +26,10 @@ int main() {
 
 	//testLinkedLIst();
 	//testStack();
-	testArrayStack();
-	//testQueList();
+	//testArrayStack();
+	//testQueueList();
+	testQueueArray();
+	
 	
 
 	getchar();
@@ -259,46 +262,108 @@ void testArrayStack()
 	free(stack);
 }
 
-void testQueList() {
+void testQueueList() {
 
-	QueList* Q = createQueList();
+	/* CREATE A QUEUE AND DEQUEUE IT, UNDERFLOW ERROR */
+	QueueList* Q = createQueueList();
 
-	//Try to dequeue empty que, expected to return NULL beacuse que is empty
-	int* return_value = dequeue(Q);
+	//Expected to return NULL beacuse Queue is empty
+	int* return_value = deQueue(Q);
 	if (return_value != NULL)
 	{
-		printf(" Expected Underflow error, Que is NOT empty \n");
+		printf(" Expected a Underflow error, Queue is NOT empty \n");
 	}
 
-	//Enqueue NUM_TEST number of elements to que
+	/*-------------------------------------------------------------------*/
+	/* ENQUE A FEW ITEMS */
+
+	//Enqueue NUM_TEST number of elements to Queue
 	for (int i = 0; i < NUM_TEST; i++)
 	{
-		enqueue(Q, i+1);
+		enQueue(Q, i+1);
 	}
 
-	////Uncommenting this should give an error in the next step:
-	//dequeue(Q);
-	//enqueue(Q, 1);
-	
-
-	//Try to dequeue all elements and check that the order is correct
+	/*-------------------------------------------------------------------*/
+	/* DEQUEUE ALL ELEMENTS AND COPMARE THE ORDER */
 	int wrongNumbers = 0;
+	int expected_value;
 
 	for (int i = 0; i < NUM_TEST; i++)
 	{
-		return_value = dequeue(Q);
-		//printf("Return value: %d  \n", *return_value);
+		return_value = deQueue(Q);
+		expected_value = (i + 1);
 
-		if (*return_value != (i+1))
+		if (*return_value != expected_value)
 		{
 			wrongNumbers++;
 		}
 	}
 	if (wrongNumbers != 0)
 	{
-		printf(" Error! Dequeue returned value in wrong order. \n");
+		printf(" Error! DeQueue returned value(s) in wrong order %d times. \n", wrongNumbers);
+	}
+	/*-------------------------------------------------------------------*/
+
+
+	printf(" Queue test finished. \n");
+	free(Q);
+}
+
+void testQueueArray() {
+
+	/* CREATE A QUEUE AND DEQUEUE IT, UNDERFLOW ERROR */
+	QueueArray* Q = createQueueArray(NUM_TEST);
+
+	int* returned_value = deQueueArray(Q);
+
+	if (returned_value != NULL)
+	{
+		printf(" Expected a Underflow error, Queue is NOT empty \n");
 	}
 
-	
+	/*-------------------------------------------------------------------*/
+	/* ENQUE A FEW ITEMS */
+
+	for (int i = 0; i < Q->length; i++)
+	{
+		enQueueArray(Q, i + 1);
+	}
+
+	/*-------------------------------------------------------------------*/
+	/* DEQUEUE ALL ELEMENTS AND COPMARE THE ORDER */
+
+	int wrong_numbers = 0;
+	int expected_value;
+
+	for (int i = 0; i < Q->length; i++)
+	{
+		returned_value = deQueueArray(Q);
+
+		expected_value = i + 1;
+
+		if (*returned_value != expected_value)
+		{
+			wrong_numbers++;
+		}
+	}
+	if (wrong_numbers != 0)
+	{
+		printf("Error! deQueArray returned numbers in wrong order %d times. \n", wrong_numbers);
+	}
+	/*---------------------------------------------------------------------*/
+	/* ENQUEUE ELEMENTS UNTIL ARRAY IS FULL, THEN ONE MORE; OVERFLOW ERROR */
+
+	for (int i = 0; i < Q->length; i++)
+	{
+		enQueueArray(Q, i + 1);
+	}
+
+	//Expected Overflow error
+	enQueueArray(Q, Q->length + 1);
+
+	/*---------------------------------------------------------------------*/
+
+	printf(" Test of Queue with array finnisched. \n");
 	free(Q);
+
 }

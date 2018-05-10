@@ -1,7 +1,26 @@
-The Que with linked list is implemented in the headerfile "Que.h" and the file "Que.c" and the tests are implemented in the main file "testOperations.c".
 
-The test of the Que is implemented as a function in "testOperations.c" file called "testQueList()". Uncommenting "testQueList()" in the main function
-will run the tests.
+EXERCISE 4.
+Queue with linked list.
 
-The tests are dependent on the defined number NUM_TEST, the integer value of NUM_TEST will determine how many numbers are enqueued and dequeued during the test.
-There is explaining comments in the "testQueList()" function. 
+- The queue is implemented in the files "Queue.h" and "Queue.c".
+- The tests for the queue operations are implemented in the file "testOperations.c".
+- The tests are implemented in the function "testQueueList()".  
+
+The queue structs and functions for both excercise 4 and 5 are in these files,
+it is the "QueueList" struct and functions that is a part of this exercise (nr 4).
+
+The functions for creating, enqueueing, dequeueing and checking if the queue is
+empty are all dependent on functions from "LinkedList.h", so I did not do very much
+testing of these functions. The biggest difference is in the dequeue and enqueue
+functions, where the order in wich elements are returned is important. So this was
+tested by stepping through with the debugger and checking that everything was 
+working correctly.
+
+The simple test of the Queue is implemented as a function in "testOperations.c" file 
+called "testQueList()". Uncommenting "testQueList()" in the main function will
+run the test function.
+
+The tests are dependent on the defined integer value 
+of NUM_TEST will, this will determine how many numbers are enqueued and dequeued
+during the test. There is explaining comments throughout the "testQueList()" 
+function to explain what is tested and how. 
