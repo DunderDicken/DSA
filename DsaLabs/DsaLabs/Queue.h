@@ -7,6 +7,7 @@
 
 /* STRUCTS */
 
+/*Ex_4:*/
 typedef struct Queue_with_LinkedList {
 
 	List* list;
@@ -15,6 +16,7 @@ typedef struct Queue_with_LinkedList {
 
 }QueueList;
 
+/*Ex_5:*/
 typedef struct Queue_with_array {
 
 	int* data;
@@ -28,7 +30,7 @@ typedef struct Queue_with_array {
 /* CREATE NEW QueueS */
 QueueList* createQueueList(); //Ex_4
 
-QueueArray* createQueueArray(int length);
+QueueArray* createQueueArray(int length); //Ex_5
 
 /* OPERATIONS */
 
@@ -38,6 +40,7 @@ int isQueueListEmpty(QueueList* q); //Ex_4
 //Returns 0 if que is empty, otherwise returns 1
 int isQueueArrayEmpty(QueueArray* q);
 
+//Returns 1 if que is full, otherwise returns 0
 int isQueueArrayFull(QueueArray* q);
 
 //Enqueues an element with key k

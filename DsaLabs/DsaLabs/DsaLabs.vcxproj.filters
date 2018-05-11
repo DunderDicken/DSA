@@ -61,5 +61,17 @@
     <Text Include="ex_5.txt">
       <Filter>Resource Files</Filter>
     </Text>
+    <Text Include="Ex_6.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="Ex_7.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="Ex_8.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="Ex_9.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
   </ItemGroup>
 </Project>

@@ -1,0 +1,29 @@
+
+EXERCISE 7.
+Linked lists VS Arrays.
+
+-   What are the differences between linked lists
+	and arrays for queues and stacks?:
+
+One difference is that when creating an array, you have to 
+declare the size of the array, that is you have to know
+how many elements you want the array to hold. This undynamic
+behavior of arrays is also a problem if your array gets filled.
+A linked list can grow to the size you need, but when 
+using an array you have to create a function that creates a new
+bigger array and copies all the elements to new one, this increases
+running time while inserting.
+
+The linked list on the other hand has a sentinel which takes up
+memory. If you have a lot of small lists the memory taken up by
+the sentinel can be non trivial. Linked Lists can simplify the code
+and make it easier to read and understand.
+
+-    When is it preferable to use which data structure?:
+
+Arrays are best to use when the number of elements are known,
+when making many smaller lists with few elements and/or when
+memory is in short supply. Linked list are good to use when
+the number of elements is unkown or when using data structures
+with a lot of elements in every structure. The use of Linked
+Lists can also make the code easier to read and understand.

@@ -1,0 +1,24 @@
+
+EXERCISE 6.
+Extending arrays.
+
+-   How can array based stacks and queues be changed to prevent overflow of the array
+	(that is, instead of returning an error, the data structure should increase in 
+	size)?
+
+One way to solve this problem is to let the program determine when the array is filled
+and then create a new array that has room for one more element, and copy all of the
+elements from the original array to the new one.
+
+Another way is to have the same approach, but instead of increasing the size by one,
+you could create a new array with double the size of the original and copy all the
+elements to that array.
+
+-	How would this impact the running time of the respective insert procedures?
+
+The effect is similar with both solutions. When the array is not full, the running
+time of inserting a element is essentially 1. But when creating a new bigger array
+and copying all the elements to it, the running time is at least the number of 
+elements, which is n. That is because all the elements have to be copied.
+
+

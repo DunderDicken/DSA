@@ -28,7 +28,7 @@ int main() {
 	//testStack();
 	//testArrayStack();
 	//testQueueList();
-	testQueueArray();
+	//testQueueArray();
 	
 	
 

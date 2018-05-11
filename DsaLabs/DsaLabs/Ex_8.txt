@@ -1,0 +1,27 @@
+
+EXERCISE 8.
+Stacks VS Queues 1.
+
+-   How can a stack be implemented by using two queues?
+
+One way to do this is by making the Pop() operation take
+the most running time:
+
+Let us call our two queues Q1 and Q2. While pushing we keep one queue
+empty, let say we start with Q2 empty. All pushed elements are then 
+stored in the tail of Q1. The element to pop is always in the tail
+of Q1. 
+
+When poping, all elements except the last one (the one in the tail)
+is dequeued from Q1 and enqueued to Q2. Then the last remaining elemement
+in Q1 is dequeued and returned.
+
+Q1 then becomes the new "empty queue" and vise versa.
+
+
+
+-   What would be the running time of the resulting stack operations?
+
+The running time of Push() would be the same as a regular Stack, it would
+be 1. The time to Pop() on the other hand would be at least the number
+of elements in Q1, it would be at least n.
