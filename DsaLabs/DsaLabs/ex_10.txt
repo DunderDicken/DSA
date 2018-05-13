@@ -1,0 +1,4 @@
+
+EXERCISE 10.
+Union of two stacks, pseudo-code.
+
