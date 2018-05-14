@@ -2,3 +2,39 @@
 EXERCISE 10.
 Union of two stacks, pseudo-code.
 
+I was not sure how to interpret this excerise, but I  made a choice to
+implement a crude pseudo-code to simply store the elements from both Stacks
+in one new big stack and lose the functionality of the two original
+stacks. Maybe the task was to have two "working" stacks in one
+data structure?
+
+///// Stack with Linked list ////////
+*/
+* 
+* Simply connects the lists in the Stacks to each other.
+*
+*/
+
+INPUT: Stack S1, S2.
+OUTPUT: A Stack, which contains all elements from S1 and S2.
+
+UNION_LINKEDLIST(S1, S2)
+
+	S2.list.nil.next.prev <-- S1.list.nil.prev
+	S1.list.nil.prev.next <-- S2.list.nil.next
+	S2.list.nil.prev.next <-- S1.list.nil
+	S1.list.nil.prev <-- S2.list.nil.prev
+
+
+///// Stack with Array ////////
+
+
+
+
+
+//// Running Time //////
+
+The running time of the UNION_LINKEDLIST should be good, because
+no data is copied or moved, only pointers. So the length of the lists
+should make no difference. My guess is that the running time would be O(1).
+

@@ -19,6 +19,7 @@ void testArrayStack();
 void testQueueList();
 void testQueueArray();
 
+
 int main() {
 
 	/* TEST FUNCTIONS */
@@ -29,8 +30,7 @@ int main() {
 	//testArrayStack();
 	//testQueueList();
 	//testQueueArray();
-	
-	
+
 
 	getchar();
 	return 0;
@@ -367,3 +367,5 @@ void testQueueArray() {
 	free(Q);
 
 }
+
+
