@@ -144,6 +144,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="LinkedList.c" />
+    <ClCompile Include="nPow2.c" />
     <ClCompile Include="Queue.c" />
     <ClCompile Include="Stack.c" />
     <ClCompile Include="StackArray.c" />
@@ -152,6 +153,7 @@
   <ItemGroup>
     <Text Include="ex_1.txt" />
     <Text Include="ex_10.txt" />
+    <Text Include="ex_11.txt" />
     <Text Include="ex_2.txt" />
     <Text Include="ex_3.txt" />
     <Text Include="ex_4.txt" />
@@ -163,6 +165,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="LinkedList.h" />
+    <ClInclude Include="nPow2.h" />
     <ClInclude Include="Queue.h" />
     <ClInclude Include="Stack.h" />
     <ClInclude Include="StackArray.h" />
