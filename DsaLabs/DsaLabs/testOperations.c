@@ -6,18 +6,21 @@
 #include "Stack.h"
 #include "StackArray.h"
 #include "Queue.h"
+#include "nPow2.h"
 
 /* Constants */
 #define NUM_TEST 3  // This defines how many elements will be inserted, pusched, enqueued etc..
 #define TRUE 1
 #define FALSE 0
 
-/* Functions */
+
+/* Test functions */
 void testLinkedLIst();
 void testStack();
 void testArrayStack();
 void testQueueList();
 void testQueueArray();
+void test_nPow2();
 
 
 int main() {
@@ -30,7 +33,7 @@ int main() {
 	//testArrayStack();
 	//testQueueList();
 	//testQueueArray();
-
+	test_nPow2();
 
 	getchar();
 	return 0;
@@ -366,6 +369,26 @@ void testQueueArray() {
 	printf(" Test of Queue with array finnisched. \n");
 	free(Q);
 
+}
+
+void test_nPow2()
+{
+	
+	BitArray* BA = newBitArray();
+
+	
+	int binaryNum[8] = { 0,0,0,1,0,1,1,1 };
+
+	for (int i = 0; i < BA->size; i++)
+	{
+		BA->data[i] = binaryNum[i];
+	}
+
+	print_Bit_Array(BA);
+
+	nPow2_Array(BA, 2);
+
+	print_Bit_Array(BA);
 }
 
 
