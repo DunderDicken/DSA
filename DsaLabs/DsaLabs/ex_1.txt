@@ -11,14 +11,13 @@ through the functions step by step, to ensure they worked correctly. After all
 the operations where created and stepped through, I started writing a test 
 function for all the different operations.
 
-This test i written in the function "testLinkedList()", and uncommenting it in
-the main() function of the file "testOperations().c" will run the test. The 
-test is dependent on the predefined value "NUM_TEST", wich will indicate the 
-numbers of elements inserted to the list in the beginning of the test.
+This test i written in the function "testLinkedList()".The test is dependent on
+the predefined value "NUM_TEST", wich will indicate the numbers of elements
+inserted to the list in the beginning of the test.
 
 The test is divided into 6 different smaller tests, to test all the different operations.
 There is comments throughout the test to explain what is tested and how. The test
-is only suppose to print somthing to the output if anything goes wrong, except in
+is only suppose to print something to the output if anything goes wrong, except in
 the end of the test. There is also a simple counter that will increase by one for
 every failed test.
 

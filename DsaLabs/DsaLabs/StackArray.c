@@ -44,7 +44,7 @@ pushStackArray(StackArray * stack, int k)
 	{
 		printf("Overflow error! Stack is full \n");
 		printf("Could not push key: %d . \n", k);
-		return;
+		return NULL;
 	}
 
 	stack->data[stack->top] = k;

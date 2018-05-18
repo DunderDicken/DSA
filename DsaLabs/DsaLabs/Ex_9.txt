@@ -6,7 +6,7 @@ Stacks VS Queues 2.
 
 One way to do it is like this:
 
-Say we have to Stacks with unlimited size, S1 and S2.
+Say we have two Stacks with unlimited size, S1 and S2.
 When enqueueing we simply push to S1. 
 
 When dequeueing we check if both Stacks are empty, if they are,
@@ -29,8 +29,8 @@ the three Stacks.
 If the size of S1 and S2 is unlimited, the cost of enqueue and dequeue
 is 1 if S2 is not empty,
 if S2 is empty when we want to dequeue we have to move all elements
- from S1 to S2 and the cost is then the number of elements: n.
+from S1 to S2 and the cost is then the number of elements: n.
 
-If we have Stacks with limited size the running gets longer. The worst
+If we have Stacks with limited size the running time gets longer. The worst
 case is still when S1 is full and S2 is empty, then we have to copy all
 the  elements and the cost is: n.

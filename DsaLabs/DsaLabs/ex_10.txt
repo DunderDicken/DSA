@@ -18,7 +18,7 @@ data structure?
 */
 
 INPUT: Stack S1, S2.
-OUTPUT: A Stack with the same sentinel as S1, which contains all elements from S1 and S2.
+OUTPUT: A Stack with the same sentinel adress as S1, which contains all elements from S1 and S2.
 
 UNION_LINKEDLIST(S1, S2)
 
@@ -40,7 +40,7 @@ So the length of the lists should make no difference here. My guess is that
 the running time of this would be O(1). The SORT and DELETE_DUPLICATES has to
 go through all elements of both list ( we can say n = S1.list.Size, m = S2.list.size )
 
-Running time would be: 1 + 2 x( m + n )
+Running time would be: 1 + 2x( m + n )
 This is a linnear time , O( m + n ) = O(n)
 
 ///// Stack with Array ////////
@@ -74,5 +74,7 @@ The running time of UNION_ARRAY:
 The creation of a new stack has a cost of 1. All the other steps in the function has to go 
 through all elements in S1 and S2 ( we can say n = S1.size, m = S2.size ).
 
-This would result in a running time: 1 + m + n + 2x (m + n)
-This is linnear time; O(m + n) = O(n)
+This would result in a running time: 1 + m + n + 2x(m + n)
+This requires more operations than with a Linked List, the function
+has to go through the two Stacks at least two times each, but the running time
+is still linnear time, so my guess is it won't be a big differnce. 

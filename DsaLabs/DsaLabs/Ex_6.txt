@@ -19,6 +19,7 @@ elements to that array.
 The effect is similar with both solutions. When the array is not full, the running
 time of inserting a element is essentially 1. But when creating a new bigger array
 and copying all the elements to it, the running time is at least the number of 
-elements, which is n. That is because all the elements have to be copied.
+elements, which is n. That is because all the elements have to be copied to the new
+array.
 
 

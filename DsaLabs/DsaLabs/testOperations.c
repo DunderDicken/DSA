@@ -1,3 +1,4 @@
+/* Include */
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
@@ -10,7 +11,7 @@
 #include "nPow2.h"
 
 /* Constants */
-#define NUM_TEST 3  // This defines how many elements will be inserted, pusched, enqueued etc..
+#define NUM_TEST 3  // This defines how many elements will be inserted, pusched, enqueued etc.. in the tests
 #define TRUE 1
 #define FALSE 0
 #define NUM_OF_BITS 8 // This defines how many "bits" will be in the list and array for test_nPow2()
@@ -30,22 +31,24 @@ int calc_expected_value(int arr[], int size, int num_of_left_shift);
 int main() {
 
 	/* TEST FUNCTIONS */
-	/* Uncomment one at a time to test specific operations */
 
-	//testLinkedLIst();
-	//testStack();
-	//testArrayStack();
-	//testQueueList();
-	//testQueueArray();
+	testLinkedLIst();
+	testStack();
+	testArrayStack();
+	testQueueList();
+	testQueueArray();
 	test_nPow2();
 
 	getchar();
 	return 0;
 }
 
+/* TEST FUNCTIONS */
 
 void testLinkedLIst()
 {
+	printf("Test of LinkedList started: \n\n");
+
 	int num_of_fails = 0;
 
 	/* Test 1. Create an empty list and check if it is empty. */
@@ -53,7 +56,7 @@ void testLinkedLIst()
 	List* lst = createList();
 	
 	//Test if the list is empty
-	if (isListEmpty(lst) != FALSE)
+	if (isListEmpty(lst) != TRUE)
 	{
 		printf("Test 1 failed! List was not empty after creation. \n");
 		num_of_fails++;
@@ -147,13 +150,15 @@ void testLinkedLIst()
 	}
 
 
-	printf("TestLinkedList finished with %d number of failed tests. \n", num_of_fails);
+	printf("Test of LinkedList finished with %d number of failed tests. \n", num_of_fails);
+	printf("//////////////////////////////////////////////// \n\n");
 	free(lst);
 }
 
-
 void testStack()
 {
+	printf("Test of Stack with list started: \n\n");
+
 	/* CREATE A STACK AND POP IT, UNDERFLOW ERROR */
 	Stack* stack1 = createStack();
 
@@ -204,12 +209,15 @@ void testStack()
 	}
 	/*-------------------------------------------------------------------*/
 
-	printf("TestStack finished. \n");
+	printf("Test of Stack with list finished. \n");
+	printf("//////////////////////////////////////////////// \n\n");
 	free(stack1);
 }
 
 void testArrayStack()
 {
+	printf("Test of Stack with array started: \n\n");
+
 	/* CREATE A STACK AND POP IT, UNDERFLOW ERROR */
 	StackArray* stack = createStackArray(NUM_TEST);
 
@@ -261,15 +269,19 @@ void testArrayStack()
 		pushStackArray(stack,(i+1));
 	}
 	//Push one more element, overflow error is expected
+	printf("Expected overflow-error: \n");
 	pushStackArray(stack, stack->size + 1);
 
 	/*-------------------------------------------------------------------*/
 
-	printf("TestArrayStack finished. \n");
+	printf("Test of Stack with Array finished. \n\n");
+	printf("//////////////////////////////////////////////// \n\n");
 	free(stack);
 }
 
-void testQueueList() {
+void testQueueList()
+{
+	printf("Test of Queue with List started: \n\n");
 
 	/* CREATE A QUEUE AND DEQUEUE IT, UNDERFLOW ERROR */
 	QueueList* Q = createQueueList();
@@ -312,11 +324,14 @@ void testQueueList() {
 	/*-------------------------------------------------------------------*/
 
 
-	printf(" Queue test finished. \n");
+	printf("Test of Queue with List finished. \n");
+	printf("//////////////////////////////////////////////// \n\n");
 	free(Q);
 }
 
-void testQueueArray() {
+void testQueueArray()
+{
+	printf("Test of Queue with Array started: \n\n");
 
 	/* CREATE A QUEUE AND DEQUEUE IT, UNDERFLOW ERROR */
 	QueueArray* Q = createQueueArray(NUM_TEST);
@@ -366,22 +381,28 @@ void testQueueArray() {
 	}
 
 	//Expected Overflow error
+	printf("Expected overflow-error: \n");
 	enQueueArray(Q, Q->length + 1);
 
 	/*---------------------------------------------------------------------*/
 
-	printf(" Test of Queue with array finnisched. \n");
+	printf("Test of Queue with array finished. \n");
+	printf("//////////////////////////////////////////////// \n\n");
 	free(Q);
 
 }
 
 void test_nPow2()
 {
+	printf("Test of Bit shifting started: \n\n");
+
 	//The binary number representation
 	int binaryNum[NUM_OF_BITS] = { 0,0,0,1,0,1,1,1 };
 	
 	//Calulate expected value after the nPow2() functions
 	int expected_value = calc_expected_value(binaryNum, NUM_OF_BITS, NUM_OF_LEFTSHIFT);
+
+	printf("Expected integer value after bit shifting %d time(s) is: %d \n\n", NUM_OF_LEFTSHIFT, expected_value);
 
 	/****************************************************************************/
 	/* a)	Input is an array:  */
@@ -442,9 +463,14 @@ void test_nPow2()
 	printf("\n");
 
 	/****************************************************************************/
+	printf("Test of Bit shifting finished. \n");
+	printf("//////////////////////////////////////////////// \n\n");
+
 	free(list);
 }
 
+
+/* OTHER FUNCTIONS */
 int calc_expected_value(int arr[], int size, int num_of_left_shift)
 {
 	int sum = 0,
@@ -458,7 +484,7 @@ int calc_expected_value(int arr[], int size, int num_of_left_shift)
 		value_of_pos = value_of_pos * 2;
 	}
 
-	return sum*(pow(2,num_of_left_shift));
+	return sum*((int)pow(2,num_of_left_shift));
 }
 
 

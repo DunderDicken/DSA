@@ -9,8 +9,7 @@ Queue with an array.
 The queue structs and functions for both excercise 4 and 5 are in these files,
 it is the "-QueueArray" struct and functions that is a part of this exercise.
 
-The test is written in the function "testLinkedList()", and uncommenting it in
-the main() function of the file "testOperations().c" will run the test. The 
+The test is written in the function "testQueueArray()". The 
 test is dependent on the predefined value "NUM_TEST", wich will determine how 
 big the queue is and how many numbers will be enqueued to it.
 
@@ -26,7 +25,7 @@ the instuctions in the lab manual:
 • Enqueue a few items and then dequeue them. Confirm that the output order
   is the same as the input order.
 • Enqueue elements until the internal array is completely filled and 
-enqueue another element (overflow error).
+  enqueue another element (overflow error).
 
 There is comments throughout the test to explain what is tested and how. 
 The test is only suppose to print something to the output if anything

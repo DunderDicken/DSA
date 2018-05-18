@@ -17,10 +17,9 @@ tested by stepping through with the debugger and checking that everything was
 working correctly.
 
 The simple test of the Queue is implemented as a function in "testOperations.c" file 
-called "testQueList()". Uncommenting "testQueList()" in the main function will
-run the test function.
+called "testQueList()".
 
 The tests are dependent on the defined integer value 
 of NUM_TEST will, this will determine how many numbers are enqueued and dequeued
-during the test. There is explaining comments throughout the "testQueList()" 
+during the test. There is explaining comments throughout the "testQueueList()" 
 function to explain what is tested and how. 

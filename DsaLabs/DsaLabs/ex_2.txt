@@ -12,14 +12,13 @@ rely heavily on functions from excercise 1, so the debugging went much faster
 than in excercise 1. After the pop and push operations where created and stepped 
 through, I wrote a simple test function to simplify further testing.
 
-This test i written in the function "testStack()", and uncommenting it in
-the main() function of the file "testOperations().c" will run the test. The
+This test i written in the function "testStack()". The
 test is dependent on the predefined integer value "NUM_TEST", wich will 
 indicate the numbers of elements pushed to the stack in the beginning of the 
 test and later poped. 
 
 There is comments throughout the test function to explain what is tested and how.
-The test is only suppose to print somthing to the output if anything goes wrong.
+The test is only suppose to print something to the output if anything goes wrong.
 
 
 
