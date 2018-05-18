@@ -2,21 +2,31 @@
 EXERCISE 11.
 Exponentiation via "Bit Shifting".
 
-- The doubly linked list is implemented in the files "LinkedList.h" and "LinkedList.c".
-- The tests for the dynamic set operations are implemented in the file "testOperations.c".
-- The tests are implemented in the function "testLinkedList()".  
+- The bit shifting functions are implemented in the files "nPow2.h" and "nPow2.c".
+- The tests for the functions are implemented in the file "testOperations.c".
+- The tests are implemented in the function "test_nPow2()".  
 
+The test function "test_nPow2()" is dependent on the defined values:
+NUM_OF_BITS - This defines how many "bits" will be in the list and array for test_nPow2().
+NUM_OF_LEFTSHIFT - This defines how many times the functions shifts elements left in test_nPow2().
 
+The test also uses the function "calc_expected_value()" to calculate the correct integer value 
+after nPow2(). This value is used for the simple error check.
 
+The test is divided by comments into a) and b), and tests both input as an array and as an list.
+It prints the list and the array before and after the nPow2() function is called, the output also
+displays the integer value of the binary representation.
 
+//// Running Time //////
+a)	Input is an array
+	The nPow2() function goes through all the element in the array for
+	every k integer value, so if k = 2, it goes through all elements 2 
+	times. It also moves every element.
 
+	If n = number of elements, then the running time will be in the magnitude
+	of (n * k).
 
-Exercise 11 | Exponentiation via \Bit Shifting"
-The computation of n×2k, where n is binary and k is an integer, can be efficiently done by shifting
-left k times the binary number n. E.g., if n = 00010111 (decimal 23), n × 22 = 01011100 (decimal
-92). Implement the function nPow2(n,k) which computes the following:
-• Input: (1) a sequence of 8 bits representing a binary number n, that is, each element of the
-input sequence is either a 0 or 1; (2) the exponent k.
-• Output: a sequence of 8 bits representing the value of n × 2k.
-Implement this function assuming that the input sequence is represented as (a) an array, and (b) a
-linked list. What is the running time of the two implementations?
+b)	Input is a list.
+	The runnting time of nPow2() with a list only depends on the value of k,
+	the number of elements in the list makes no difference. This is better
+	than in a).

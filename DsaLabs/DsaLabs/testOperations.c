@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
 
 /*  Include my files */
 #include "LinkedList.h"
@@ -12,7 +13,8 @@
 #define NUM_TEST 3  // This defines how many elements will be inserted, pusched, enqueued etc..
 #define TRUE 1
 #define FALSE 0
-
+#define NUM_OF_BITS 8 // This defines how many "bits" will be in the list and array for test_nPow2()
+#define NUM_OF_LEFTSHIFT 2 //This defines how many times the functions shifts left in test_nPow2()
 
 /* Test functions */
 void testLinkedLIst();
@@ -22,6 +24,8 @@ void testQueueList();
 void testQueueArray();
 void test_nPow2();
 
+/* Other functions */
+int calc_expected_value(int arr[], int size, int num_of_left_shift);
 
 int main() {
 
@@ -373,50 +377,88 @@ void testQueueArray() {
 
 void test_nPow2()
 {
-	/* a) 
-	*		Input is an array: */
+	//The binary number representation
+	int binaryNum[NUM_OF_BITS] = { 0,0,0,1,0,1,1,1 };
+	
+	//Calulate expected value after the nPow2() functions
+	int expected_value = calc_expected_value(binaryNum, NUM_OF_BITS, NUM_OF_LEFTSHIFT);
+
+	/****************************************************************************/
+	/* a)	Input is an array:  */
+
 	BitArray* BA = newBitArray();
 
-	int binaryNum[8] = { 0,0,0,1,0,1,1,1 };
-
+	/* Insert all elements in the array and print the elements */
 	for (int i = 0; i < BA->size; i++)
 	{
 		BA->data[i] = binaryNum[i];
 	}
 
+	printf("Bit array before nPow2: \n");
 	print_Bit_Array(BA);
-	printf("Int value of BitArray: %d  \n", bit_to_int(BA));
+	printf("Int value of BitArray: %d  \n", bit_to_int_array(BA));
+	printf("\n");
 
-	nPow2_Array(BA, 2);
+	/* Perform the nPow2 and print the result, check for error */
+	nPow2_Array(BA, NUM_OF_LEFTSHIFT);
 
-	print_Bit_Array(BA);
-	printf("Int value of BitArray: %d  \n", bit_to_int(BA));
-
-	/*           */
-	List* list = createList();
-	
-	for (int i = 0; i < sizeof(binaryNum); i++)
+	if (bit_to_int_array(BA) != expected_value)
 	{
-		insert(list, newListElementWithKey(binaryNum[i]));
-		
+		printf("error! int value of Bit array: %d != expected value: %d After nPow2\n", bit_to_int_array(BA), expected_value);
 	}
 
-	//insert(list, newListElementWithKey(0)); //1
-	//insert(list, newListElementWithKey(0)); //2 
-	//insert(list, newListElementWithKey(0)); //3
-	//insert(list, newListElementWithKey(0)); //4
-	//insert(list, newListElementWithKey(0)); //5
-	//insert(list, newListElementWithKey(0)); //6
-	//insert(list, newListElementWithKey(0)); //7
-	//insert(list, newListElementWithKey(1)); //8
+	printf("Bit array after left shifting %d times: \n",NUM_OF_LEFTSHIFT);
+	print_Bit_Array(BA);
+	printf("Int value of BitArray: %d  \n", bit_to_int_array(BA));
+	printf("\n");
+
+	/****************************************************************************/
+	/* b)  Input is an Linked List */
+
+	List* list = createList();
 	
-	
+	/* Insert all elements in the list and print the list */
+	for (int i = (NUM_OF_BITS - 1) ; i >= 0; i--)
+	{
+		insert(list, newListElementWithKey(binaryNum[i]));
+	}
+
+	printf("List before nPow2: \n");
 	print_Bit_List(list);
+	printf("Int value of list: %d  \n", bit_to_int_list(list));
+	printf("\n");
 
-	nPow2_List(list, 1);
+	/* Perform the nPow2 and print the result, check for error */
+	nPow2_List(list,NUM_OF_LEFTSHIFT);
 
+	if (bit_to_int_list(list) != expected_value)
+	{
+		printf("error! int value of Bit List: %d != expected value: %d After nPow2\n", bit_to_int_list(list), expected_value);
+	}
+
+	printf("List after left shifting %d times: \n", NUM_OF_LEFTSHIFT);
 	print_Bit_List(list);
+	printf("Int value of list: %d  \n", bit_to_int_list(list));
+	printf("\n");
 
+	/****************************************************************************/
+	free(list);
+}
+
+int calc_expected_value(int arr[], int size, int num_of_left_shift)
+{
+	int sum = 0,
+		value_of_pos = 1;
+
+	for (int i = size - 1; i >= 0; i--)
+	{
+		if (arr[i] == 1) {
+			sum = sum + value_of_pos;
+		}
+		value_of_pos = value_of_pos * 2;
+	}
+
+	return sum*(pow(2,num_of_left_shift));
 }
 
 

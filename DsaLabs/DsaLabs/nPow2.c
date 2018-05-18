@@ -15,21 +15,25 @@ BitArray* newBitArray() {
 	return temp;
 }
 
+
 nPow2_List(List * n, int k)
 {
-	ListElement* old_top = n->nil->next;
-	ListElement* old_bottom = n->nil->prev;
+	for (int i = 0; i < k; i++)
+	{
 
-	n->nil->next = old_top->next;
-	n->nil->next->prev = n->nil;
-	n->nil->prev = old_top;
+		ListElement* old_top = n->nil->next;
+		ListElement* old_bottom = n->nil->prev;
 
-	old_top->next = n->nil;
-	old_top->prev = old_bottom;
+		n->nil->next = old_top->next;
+		n->nil->next->prev = n->nil;
+		n->nil->prev = old_top;
 
-	old_bottom->next = old_top;
+		old_top->next = n->nil;
+		old_top->prev = old_bottom;
 
-	
+		old_bottom->next = old_top;
+
+	}
 
 	
 }
@@ -55,22 +59,22 @@ void print_Bit_Array(BitArray * array)
 	{
 		printf("%d ", array->data[i]);
 	}
-	printf(" \n");
+	printf("\n");
 }
 
 void print_Bit_List(List * list)
 {
-	ListElement* tmp = list->nil->prev;
+	ListElement* tmp = list->nil->next;
 
 	while (tmp != list->nil)
 	{
 		printf("%d ", tmp->key);
-		tmp = tmp->prev;
+		tmp = tmp->next;
 	}
-	printf(" \n");
+	printf("\n");
 }
 
-int bit_to_int(BitArray * ba)
+int bit_to_int_array(BitArray * ba)
 {
 	int sum = 0,
 		valueOfPos = 1;
@@ -85,5 +89,27 @@ int bit_to_int(BitArray * ba)
 		valueOfPos = valueOfPos * 2;
 		
 	}
+	return sum;
+}
+
+int bit_to_int_list(List * l)
+{
+	ListElement* tmp = l->nil->prev;
+
+	int sum = 0,
+		value_of_pos = 1;
+	
+	while (tmp != l->nil)
+	{
+
+		if (tmp->key == 1)
+		{
+			sum = sum + value_of_pos;
+		}
+		value_of_pos = value_of_pos * 2;
+
+		tmp = tmp->prev;
+	}
+
 	return sum;
 }
