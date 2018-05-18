@@ -18,6 +18,16 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="load_file.c" />
+    <ClCompile Include="test_load_file.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="load_file.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="text.txt" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{3EEDDC69-9DE4-4959-BB2F-1FA86FC995EB}</ProjectGuid>
@@ -142,13 +152,6 @@
       <SubSystem>Console</SubSystem>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="load_file.c" />
-    <ClCompile Include="test_load_file.c" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="load_file.h" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

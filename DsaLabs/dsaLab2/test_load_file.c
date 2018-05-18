@@ -1,11 +1,10 @@
-
 #include <stdio.h>
 
 #include "load_file.h"
 
 int main( int argc, char* argv[] )
 {
-	const char* fName = "C:\Users\dickk\source\repos\DSA\DsaLabs\dsaLab2\sorting_problems\test-10-1-problem";
+	const char* fName = "sorting_problems/test-10-1-problem";
 	
 	int* a = load_file(fName);
 
@@ -14,4 +13,5 @@ int main( int argc, char* argv[] )
 	{
 		printf("%d\n", a[i]);
 	}
+	getchar();
 }

@@ -2,12 +2,12 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdint.h>
-#include <stdio.h>
-#include  "stdbool.h"
 
 #include "load_file.h"
 #include "stdlib.h"
-#define MAX_NUM_ELEMENTS		100000
+
+
+#define MAX_NUM_ELEMENTS 100000
 
 int* load_file(const char* fName)
 {
@@ -15,10 +15,15 @@ int* load_file(const char* fName)
 	int num_elements = 0;
 
 	FILE* file = fopen(fName, "r");
+	if (file == NULL)
+	{
+		printf("unable to open file.\n");
+		
+	}
 	char line[256];
 	while (fgets(line, sizeof(line), file)) {
 		input[num_elements++] = atoi(line);
-		printf("%d", atoi(line));
+		//printf("%d", atoi(line));
 	}
 	fclose(file);
 	
