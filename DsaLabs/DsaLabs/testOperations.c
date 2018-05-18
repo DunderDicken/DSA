@@ -373,10 +373,10 @@ void testQueueArray() {
 
 void test_nPow2()
 {
-	
+	/* a) 
+	*		Input is an array: */
 	BitArray* BA = newBitArray();
 
-	
 	int binaryNum[8] = { 0,0,0,1,0,1,1,1 };
 
 	for (int i = 0; i < BA->size; i++)
@@ -385,10 +385,38 @@ void test_nPow2()
 	}
 
 	print_Bit_Array(BA);
+	printf("Int value of BitArray: %d  \n", bit_to_int(BA));
 
 	nPow2_Array(BA, 2);
 
 	print_Bit_Array(BA);
+	printf("Int value of BitArray: %d  \n", bit_to_int(BA));
+
+	/*           */
+	List* list = createList();
+	
+	for (int i = 0; i < sizeof(binaryNum); i++)
+	{
+		insert(list, newListElementWithKey(binaryNum[i]));
+		
+	}
+
+	//insert(list, newListElementWithKey(0)); //1
+	//insert(list, newListElementWithKey(0)); //2 
+	//insert(list, newListElementWithKey(0)); //3
+	//insert(list, newListElementWithKey(0)); //4
+	//insert(list, newListElementWithKey(0)); //5
+	//insert(list, newListElementWithKey(0)); //6
+	//insert(list, newListElementWithKey(0)); //7
+	//insert(list, newListElementWithKey(1)); //8
+	
+	
+	print_Bit_List(list);
+
+	nPow2_List(list, 1);
+
+	print_Bit_List(list);
+
 }
 
 
