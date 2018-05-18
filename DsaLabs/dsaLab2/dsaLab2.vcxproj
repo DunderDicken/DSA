@@ -19,10 +19,14 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\DsaLabs\LinkedList.c" />
+    <ClCompile Include="insertion_sort_linkedList.c" />
     <ClCompile Include="load_file.c" />
     <ClCompile Include="test_load_file.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\DsaLabs\LinkedList.h" />
+    <ClInclude Include="insertion_sort_linkedList.h" />
     <ClInclude Include="load_file.h" />
   </ItemGroup>
   <ItemGroup>
