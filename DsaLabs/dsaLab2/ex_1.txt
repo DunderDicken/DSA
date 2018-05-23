@@ -1,0 +1,13 @@
+
+EXERCISE 1.
+Insertion sort 1 - linked list.
+
+-	The insertion sort is implemented in the files "insertion_sort_linkedList.h" and "insertion_sort_linkedList.c"
+-	The test of insertion sort is implemented in the file "test_insertion_sort.c" 
+-	The test is called from the main function in the file "Source.c"
+
+The test in "test_insertion_sort.c" tests my insertion sort function with 
+some of the provided test files in "Sorting problems".
+
+It then takes the sorted list and tests it with the provided test_solution() funtion.
+

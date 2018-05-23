@@ -174,3 +174,16 @@ ListElement * predecessor(List * list, ListElement * listElement)
 	return pre;
 }
 
+void print_list(List * list)
+{
+	ListElement* tmp = list->nil->next;
+
+	while (tmp != list->nil)
+	{
+		printf("%d ", tmp->key);
+		tmp = tmp->next;
+
+	}
+	printf("\n");
+}
+

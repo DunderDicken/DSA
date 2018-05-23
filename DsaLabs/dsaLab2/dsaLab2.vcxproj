@@ -20,17 +20,23 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\DsaLabs\LinkedList.c" />
+    <ClCompile Include="insertion_sort_array.c" />
     <ClCompile Include="insertion_sort_linkedList.c" />
     <ClCompile Include="load_file.c" />
+    <ClCompile Include="Source.c" />
+    <ClCompile Include="test_insertion_sort.c" />
     <ClCompile Include="test_load_file.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\DsaLabs\LinkedList.h" />
+    <ClInclude Include="insertion_sort_array.h" />
     <ClInclude Include="insertion_sort_linkedList.h" />
     <ClInclude Include="load_file.h" />
+    <ClInclude Include="test_insertion_sort.h" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="text.txt" />
+    <Text Include="ex_1.txt" />
+    <Text Include="ex_2.txt" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
