@@ -5,9 +5,15 @@ Insertion sort 1 - linked list.
 -	The insertion sort is implemented in the files "insertion_sort_linkedList.h" and "insertion_sort_linkedList.c"
 -	The test of insertion sort is implemented in the file "test_insertion_sort.c" 
 -	The test is called from the main function in the file "Source.c"
+-	The insertion sort uses the struct and functions of Linked Lists, defined in "LinkedLIst.c"
 
 The test in "test_insertion_sort.c" tests my insertion sort function with 
-some of the provided test files in "Sorting problems".
+some of the provided test files in "Sorting problems". It then takes the sorted 
+list and tests it with the provided test_solution() funtion. This test was the main
+way i tested my sorting function. I realise that this test is dependent on me
+handling the printing correctly, but it seems to be working correclty.
 
-It then takes the sorted list and tests it with the provided test_solution() funtion.
+The sorting function has a flag, if the flag is set to TRUE it will print the numbers before and after
+sorting. If the flag is set to FALSE when the sorting function is called, it will only display
+the result of the test, the "the_sorted_list()" test.
 

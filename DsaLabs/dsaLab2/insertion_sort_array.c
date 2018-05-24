@@ -1,17 +1,23 @@
-
+/* Includes */
 #include <stdio.h>
 #include <stdlib.h>
+
+/* Include my files */
 #include "load_file.h"
 #include "insertion_sort_array.h"
 
+
 int * insertionSortArray(const char * fName, bool print)
 {
-	SortArray* a = (SortArray*)malloc(sizeof(SortArray));
+	//Reading file and storing the size from the first element
 	int* from_file = load_file(fName);
 	int size = from_file[0];
 
+	//Creating and initalizing the final sorted array
+	SortArray* a = (SortArray*)malloc(sizeof(SortArray));
 	a->size = size;
 	a->data = (int*)malloc(size * sizeof(int));
+
 
 	if (print) {
 		printf("Before sorting: ");
@@ -23,7 +29,7 @@ int * insertionSortArray(const char * fName, bool print)
 		printf("\n");
 	}
 
-	/*Insertion sort function */
+	/* Main Insertion sort function */
 	for (int j = 2; j <= a->size; j++)
 	{
 		int key = from_file[j];
@@ -36,7 +42,7 @@ int * insertionSortArray(const char * fName, bool print)
 		from_file[i + 1] = key;
 	}
 
-	//Add to new array without the first element
+	//Add sorted array to the new array without the first element
 	for (int i = 1; i <= size; i++)
 	{
 		a->data[i - 1] = from_file[i];
@@ -52,5 +58,6 @@ int * insertionSortArray(const char * fName, bool print)
 		printf("\n");
 	}
 
+	//Return the new sorted array
 	return a->data;
 }

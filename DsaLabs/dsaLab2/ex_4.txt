@@ -1,0 +1,6 @@
+
+Exercise 4.
+Merge sort 1.
+
+- Explain what is the loop invariant in the Merge procedure used in Merge Sort?
+

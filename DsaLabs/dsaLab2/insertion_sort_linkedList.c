@@ -1,20 +1,21 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "load_file.h"
+#include "LinkedList.h"
 #include "insertion_sort_linkedList.h"
 
 List* insertionSortList(const char * fName, bool print)
 {
-
+	//Load numbers from the file
 	int* a = load_file(fName);
-
-	List* sortedList = createList();
 	int size = a[0];
 
+	List* sortedList = createList();
+	
 	if (print)
 		printf("Before sorting: ");
 
-
+	//Outer loop of the insertion sorts function
 	for (int j = 1; j <= size; j++)
 	{
 		ListElement* current = newListElementWithKey(a[j]);
@@ -22,6 +23,7 @@ List* insertionSortList(const char * fName, bool print)
 		if (print)
 			printf("%d ", a[j]);
 
+		//Inner loop of insertion sort, Inserts the number in sorted order to the list
 		sortedInsertList(sortedList, current);
 
 	}
@@ -31,6 +33,7 @@ List* insertionSortList(const char * fName, bool print)
 
 		printf("After sorting:  ");
 		print_list(sortedList);
+		
 	}
 	
 
@@ -39,7 +42,7 @@ List* insertionSortList(const char * fName, bool print)
 
 void sortedInsertList(List * list, ListElement * newElement)
 {
-	//If newElement is the first element, insert at nil.next
+	//If newElement is the first element in the list, insert at nil.next
 	if (isListEmpty(list) )
 	{
 		insert(list, newElement);
@@ -83,7 +86,7 @@ List * array2List(int * a)
 	List* list = createList();
 
 	int size = a[0];
-	for (int i = 1; i <= size; i++) // note this loops from 1 <= i <= size
+	for (int i = 1; i <= size; i++) 
 	{
 		insert(list, newListElementWithKey(a[i]));
 	}
@@ -104,7 +107,6 @@ int * list2Array(List * list)
 		tmp = tmp->next;
 
 	}
-
 
 	return array;
 

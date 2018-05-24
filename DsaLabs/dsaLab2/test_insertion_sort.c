@@ -1,4 +1,6 @@
+/* Includes */
 #include <stdio.h>
+#include <time.h>
 #include "test_insertion_sort.h"
 
 /* Constants */
@@ -97,6 +99,7 @@ void test_insertion_sort_LinkedList()
 	
 }
 
+/* insertion sort test function with Array */
 void test_insertion_sort_Array()
 {
 	printf("START OF TEST_INSERTION_SORT WITH AN ARRAY \n\n");
@@ -144,6 +147,26 @@ void test_insertion_sort_Array()
 
 	/*-------------------------------------------------------------------------------*/
 
+	fName = "sorting_problems/test-10000-1-problem";
+	sol_fName = "sorting_problems/test-10000-1-solution";
+
+	printf("Insertion sort with file \" %s \" starting: \n", fName);
+
+	a = insertionSortArray(fName, DONT_PRINT);
+	test_sorted_array(a, fName, sol_fName);
+
+	/*-------------------------------------------------------------------------------*/
+
+	fName = "sorting_problems/test-100000-1-problem";
+	sol_fName = "sorting_problems/test-100000-1-solution";
+
+	printf("Insertion sort with file \" %s \" starting: \n", fName);
+
+	a = insertionSortArray(fName, DONT_PRINT);
+	test_sorted_array(a, fName, sol_fName);
+
+	/*-------------------------------------------------------------------------------*/
+
 	printf("END OF TEST_INSERTION_SORT WITH ARRAY \n");
 	printf("////////////////////////////////////////////////// \n");
 }
@@ -165,6 +188,7 @@ void test_sorted_list(List * sortedList, const char* fName, const char* sol_fNam
 
 }
 
+/*Takes the sorted array and uses the test_solution() function, prints result */
 void test_sorted_array(int * sortedArray, const char * fName, const char * sol_fName)
 {
 

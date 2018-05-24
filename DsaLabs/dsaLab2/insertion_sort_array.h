@@ -9,4 +9,8 @@ typedef struct sort_array
 
 }SortArray;
 
+/* FUNCTIONS */
+
+//Sorts the numbers stored in the file with the given filename. 
+//Setting print to TRUE will print the numbers.
 int* insertionSortArray(const char* fName, bool print);

@@ -1,0 +1,38 @@
+
+Exercise 3.
+Linked Lists VS Arrays.
+
+• What effect does the choice of data structure (array VS linked list) have on the implementation of insertion sort?
+
+One effect it has is how we insert elements to the data strucuture. With linked lists there
+is no point in first inserting all elements and then "moving" them around, as we do with arrays.
+
+With arrays we move through the array and "makes space" along the way, with Linked Lists we simply
+find the right place and insert the element there.
+
+
+• What are the advantages and disadvantages of arrays and linked lists?
+
+Because the insertion sort function goes through all the numbers in sequential order,
+my guess is that the complexity of the Insertion sort will be the same regardless of
+which data stucture is used, it will in the worst case always be O(n^2).
+
+But in general terms, there is advantages(+) and disadvantages(-):
+
+Arrays:
++	We have random access and we can go directly to a known index with a complexity of O(1).
++	No extra memory space for storing pointers.
+-	Inserting or deleteing elements is "costly".
+-	Fixed size, or high cost of increasing size.
+
+Linked lists:
++	Dynamic, we don't have to kwow the size beforehand.
++	Low "cost" of deleting or inserting.
+-	Only sequential access to elements, we can't go directly to a known index.
+-	Extra memory needed for every element, because of the pointers and the sentinel.
+
+
+• In which situation is one preferable over the other?
+
+When we have a lot of smaller sets of data, it is better to use arrays. This is because of
+the extra memory needed by the Linked Lists references. 

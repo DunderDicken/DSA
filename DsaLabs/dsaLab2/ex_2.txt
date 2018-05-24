@@ -2,11 +2,15 @@
 EXERCISE 2.
 Insertion sort 2 - array.
 
--	The insertion sort is implemented in the files "insertion_sort_linkedList.h" and "insertion_sort_linkedList.c"
+-	Insertion sort is implemented in the files "insertion_sort_array.h" and "insertion_sort_array.c"
 -	The test of insertion sort is implemented in the file "test_insertion_sort.c" 
+-	The test is in the function called "test_insertion_sort_Array()"
 -	The test is called from the main function in the file "Source.c"
 
 The test in "test_insertion_sort.c" tests my insertion sort function with 
-some of the provided test files in "Sorting problems".
+some of the provided test files in "Sorting problems".It then takes the sorted
+list and tests it with the provided test_solution() funtion. 
 
-It then takes the sorted list and tests it with the provided test_solution() funtion.
+It will print whether the test was successful or not. There is also a flag "print" in the argument
+for the insertion sort function, if this is set to TRUE, the function will print the numbers
+before and after the sorting. This is the main method I used to test the sorting function.
