@@ -1,6 +1,5 @@
 /* Includes */
 #include <stdio.h>
-#include <time.h>
 #include "test_insertion_sort.h"
 
 /* Constants */

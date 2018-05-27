@@ -4,3 +4,25 @@ Merge sort 1.
 
 - Explain what is the loop invariant in the Merge procedure used in Merge Sort?
 
+The loop invariant, which is a property that is true before and after every
+loop-iteration, is as follows;
+
+The array A[p .. k-1] contains the smallest elements of L[1 .. n1+1] and
+R[1 .. n2+1]. These elements are also in sorted order in A[p .. k-1].
+
+The elements in the top position of the L- and R-arrays are the smallest
+elements of their respective array which has not yet been copied to A[]. 
+The "top position" is L[i] and R[j].
+
+This is true for the for-loop shown in the psudeocode below:
+
+    12 for k <-- p to r do
+    13     if L[i] <= R[j]  then
+    14			A[k] <-- L[i]
+    15			i <-- i + 1
+
+    16     else A[k] <-- R[j]
+    17			j <-- j + 1
+(I have borrowed this psuedocode from the textbook, p. 32)
+
+

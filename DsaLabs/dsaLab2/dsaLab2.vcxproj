@@ -23,22 +23,27 @@
     <ClCompile Include="insertion_sort_array.c" />
     <ClCompile Include="insertion_sort_linkedList.c" />
     <ClCompile Include="load_file.c" />
+    <ClCompile Include="merge_sort.c" />
     <ClCompile Include="Source.c" />
     <ClCompile Include="test_insertion_sort.c" />
     <ClCompile Include="test_load_file.c" />
+    <ClCompile Include="test_merge_sort.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\DsaLabs\LinkedList.h" />
     <ClInclude Include="insertion_sort_array.h" />
     <ClInclude Include="insertion_sort_linkedList.h" />
     <ClInclude Include="load_file.h" />
+    <ClInclude Include="merge_sort.h" />
     <ClInclude Include="test_insertion_sort.h" />
+    <ClInclude Include="test_merge_sort.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="ex_1.txt" />
     <Text Include="ex_2.txt" />
     <Text Include="ex_3.txt" />
     <Text Include="ex_4.txt" />
+    <Text Include="ex_5.txt" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
