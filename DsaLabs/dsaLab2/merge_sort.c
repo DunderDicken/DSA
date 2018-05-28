@@ -3,49 +3,73 @@
 
 List* merge_sort_from_file(const char * fName, bool print)
 {
-
+	/* Read numbers from file */
 	int* a = load_file(fName);
 
+	/* Convert array to doubly linked list with sentinel */
 	List* A = array_2_list(a);
 
-	merge_sort(A->nil->next);
+	/* Init linked list for merge sort, remove pointers to sentinel*/
+	A->nil->next->prev = NULL;
+	A->nil->prev->next = NULL;
 
+	if (print)
+	{
+		printf("Before sorting: ");
+		printSingeList(A->nil->next);
+	}
+
+	/* Do the merge sort*/
+	ListElement* result = merge_sort(A->nil->next);
+	
+	/* Add back prev-pointers and pointers to sentinel, making the list doubly linked again*/
+	A->nil->next = result;
+	result->prev = A->nil;
+
+	ListElement* temp = A->nil->next;
+	while (temp->next != NULL)
+	{
+		temp->next->prev = temp;
+		temp = temp->next;
+	}
+	temp->next = A->nil;
+
+	if (print)
+	{
+		printf("After sorting:	");
+		print_list(A);
+	}
+	
+	/* Return the final doubly linked list with sentinel */
 	return A;
 }
 
-void merge_sort(ListElement* sourceList)
+/* Main merge sort function */
+ListElement* merge_sort(ListElement* sourceElement)
 {
-	ListElement* head = sourceList;
-	ListElement* left;
-	ListElement* right;
-
-	//If the list is empty, return
-	if (head->next == NULL)
+	
+	//If the list is empty, return the source element
+	if (sourceElement == NULL || sourceElement->next == NULL)
 	{
-		return;
+		return sourceElement;
 	}
 
-	left_right_split(head, left, right);
+	/* Split the list to two lists */
+	ListElement* second = left_right_split(sourceElement);
 
-	merge_sort(left);
-	merge_sort(right);
+	/* Recursive function for the two lists */
+	sourceElement = merge_sort(sourceElement);
+	second = merge_sort(second);
 
-	//merge(left,right);
+	/* Merge the two lists and return */
+	return merge(sourceElement,second);
 
-	//if (p < r)
-	//{
-	//	int q = (int)floor((p + r) / 2);
-
-	//	merge_sort(A, p, q); //Left
-	//	merge_sort(A, q+1, r); //Right
-
-	//	merge(A, p, q, r);
-
-	//}
 }
 
+/* Merge two lists */
 ListElement* merge(ListElement* left, ListElement* right)
 {
+	/* If one list is empty, return the other list */
 	if (!left)
 	{
 		return right;
@@ -55,10 +79,10 @@ ListElement* merge(ListElement* left, ListElement* right)
 		return left;
 	}
 
-
+	/* Merge based on the smallest key */
 	if (left->key < right->key)
 	{
-		left->next = merge(left, right->next);
+		left->next = merge(left->next, right);
 		left->next->prev = left;
 		left->prev = NULL;
 		return left;
@@ -74,11 +98,14 @@ ListElement* merge(ListElement* left, ListElement* right)
 	
 }
 
+/* Takes an array and returns a doubly linked list with sentinel */
 List * array_2_list(int * a)
 {
 	List* list = createList();
 
 	int size = a[0];
+
+	// Starts from the [1] element in the array, because this is only the size of the array
 	for (int i = 1; i <= size; i++)
 	{
 		insert(list, newListElementWithKey(a[i]));
@@ -87,25 +114,31 @@ List * array_2_list(int * a)
 	return list;	
 }
 
-void left_right_split(ListElement * head, ListElement * left, ListElement * right)
+/*	Splits the list to two lists. * 
+ *	Uses the fast/slow method.	  */
+ListElement* left_right_split(ListElement * head)
 {
-	ListElement* fast = head->next;
+	ListElement* fast = head;
 	ListElement* slow = head;
 
-	while (fast != NULL)
+	while (fast->next && fast->next->next)
 	{
-		fast = fast->next;
-
-		if (fast != NULL)
-		{
-			slow = slow->next;
-			fast = fast->next;
-		}
+		fast = fast->next->next;
+		slow = slow->next;
 	}
+	ListElement *temp = slow->next;
+	slow->next = NULL;
+	return temp;
 
-	
+}
 
-	
-	/*'slow' is before the midpoint in the list, so split it in two
-    at that point. */
+/* Prints a single linked list, where NULL is a mark for the end of the list*/
+void printSingeList(ListElement * l)
+{
+	while (l != NULL)
+	{
+		printf("%d ", l->key);
+		l = l->next;
+	}
+	printf("\n");
 }

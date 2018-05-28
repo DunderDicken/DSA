@@ -1,0 +1,18 @@
+
+EXERCISE 5.
+Merge sort 2.
+
+-	Merge sort is implemented in the files "merge_sort.h" and "merge_sort.c"
+-	The test for merge sort is implemented in the file "test_merge_sort.c" 
+-	The test is called from the main function in the file "Source.c"
+-	The test uses the function "test_sorted_list()" implemented in "test_insertion_sort.c"
+
+The test function in "test_merge_sort.c" calls merge_sort with some of the of the provided
+test files. It has a flag, "print", if it is TRUE the function will print the list before
+and after sorting. I used this printing function for testing the function.
+
+This merge_sort is a bit unnecessarily complicated, because it first reads the file,
+converts the given array to a DLL with a sentinel. Then it removes the sentinel and sends it to
+the merge_sort(). After the sorting is done the sentinel is added back. I did it this way 
+because I wanted to use my DLL-functions from Lab 1.
+

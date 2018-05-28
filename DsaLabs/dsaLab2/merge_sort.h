@@ -10,11 +10,13 @@
 
 List* merge_sort_from_file(const char* fName, bool print);
 
-void merge_sort(List* sourceList);
+ListElement* merge_sort(ListElement* sourceElement);
 
 
 ListElement* merge(ListElement* l, ListElement* r);
 
 List* array_2_list(int* a);
 
-void left_right_split(ListElement* head, ListElement* left, ListElement* right);
+ListElement* left_right_split(ListElement* head);
+
+void printSingeList(ListElement* l);

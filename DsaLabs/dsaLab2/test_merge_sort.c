@@ -24,7 +24,51 @@ void test_merge_sort()
 	printf("Merge sort with file \" %s \" starting: \n", fName);
 
 	List* sortedList = merge_sort_from_file(fName, PRINT);
-	//test_sorted_list(sortedList, fName, sol_fName);
+	test_sorted_list(sortedList, fName, sol_fName);
+
+
+	/*-------------------------------------------------------------------------------*/
+
+	fName = "sorting_problems/test-10-2-problem";
+	sol_fName = "sorting_problems/test-10-2-solution";
+
+	printf("Merge sort with file \" %s \" starting: \n", fName);
+
+	sortedList = merge_sort_from_file(fName, PRINT);
+	test_sorted_list(sortedList, fName, sol_fName);
+
+
+	/*-------------------------------------------------------------------------------*/
+
+	fName = "sorting_problems/test-10-3-problem";
+	sol_fName = "sorting_problems/test-10-3-solution";
+
+	printf("Merge sort with file \" %s \" starting: \n", fName);
+
+	sortedList = merge_sort_from_file(fName, PRINT);
+	test_sorted_list(sortedList, fName, sol_fName);
+
+
+	/*-------------------------------------------------------------------------------*/
+
+	fName = "sorting_problems/test-100-2-problem";
+	sol_fName = "sorting_problems/test-100-2-solution";
+
+	printf("Merge sort with file \" %s \" starting: \n", fName);
+
+	sortedList = merge_sort_from_file(fName, DONT_PRINT);
+	test_sorted_list(sortedList, fName, sol_fName);
+
+
+	/*-------------------------------------------------------------------------------*/
+
+	fName = "sorting_problems/test-1000-1-problem";
+	sol_fName = "sorting_problems/test-1000-1-solution";
+
+	printf("Merge sort with file \" %s \" starting: \n", fName);
+
+	sortedList = merge_sort_from_file(fName, DONT_PRINT);
+	test_sorted_list(sortedList, fName, sol_fName);
 
 
 	/*-------------------------------------------------------------------------------*/
