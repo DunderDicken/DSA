@@ -48,6 +48,9 @@
     <Text Include="ex_3.txt" />
     <Text Include="ex_4.txt" />
     <Text Include="ex_5.txt" />
+    <Text Include="ex_6.txt" />
+    <Text Include="ex_7.txt" />
+    <Text Include="ex_8.txt" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>

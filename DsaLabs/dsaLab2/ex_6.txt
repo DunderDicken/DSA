@@ -1,0 +1,43 @@
+
+EXERCISE 6.
+Quick sort 1.
+
+Illustration of the operation of the Partition procedure of Quick Sort (step-by-step) on the input 
+array A = { 17, 10, 9, 9, 2, 1, 8, 16 }:
+
+index:	0	1	2	3	4	5	6	7
+A =	  {17, 10,	9,	9,  2,  1,	8, 16}
+
+p = 0, r = 7.
+
+PARTITION(A, p, r):
+
+x = A[r] (pivot)
+
+	p					     r
+  {17, 10, 9, 9, 2, 1, 8, | 16}   //initial setting, i = (p-1), j = p, x = pivot. No swap because A[j] > x.
+i	j						 x
+							 							 	
+  {*17,*10, 9, 9, 2, 1, 8, | 16}  //Since A[j] < x, do i++ and swap A[i]<->A[j]
+	i	j					 x
+
+  {10,*17, *9, 9, 2, 1, 8, | 16}  //Since A[j] < x, do i++ and swap A[i]<->A[j]
+		i	j				 x
+
+  {10, 9,*17, *9, 2, 1, 8, | 16}  //Since A[j] < x, do i++ and swap A[i]<->A[j]
+		   i   j			 x
+
+  {10, 9, 9, *17,*2, 1, 8, | 16}  //Since A[j] < x, do i++ and swap A[i]<->A[j]
+			   i  j			 x
+
+  {10, 9, 9, 2, *17,*1, 8, | 16}  //Since A[j] < x, do i++ and swap A[i]<->A[j]
+				  i   j		 x
+
+  {10, 9, 9, 2,  1,*17,*8, | 16}  //Since A[j] < x, do i++ and swap A[i]<->A[j]
+					 i	j	 x
+
+  {10, 9, 9, 2,  1, 8,*17, |*16}  //End of for-loop, swap A[i+1] <-> A[r]
+					i		 x
+
+  {10, 9, 9, 2,  1, 8, 16, | 17}  //Final array, return i+1.
+					i		 x	

@@ -1,0 +1,15 @@
+
+EXERCISE 7.
+Quick sort 2.
+
+-	Quicksort is implemented in the files "quick_sort.h" and "quick_sort.c"
+-	The test for Quicksort is implemented in the file "test_quick_sort.c" 
+-	The test is called from the main function in the file "Source.c"
+-	The test uses the function "test_sorted_array()" which is implemented in "test_insertion_sort.c"
+
+I mainly used the test function in "test_quick_sort()" to the test the implementation.
+The test loads some of the provided test files and prints the result. I also used a couple of
+prints in the function during coding to see what was happening.
+
+The test is called from "Source.c" and it will print out the smaller lists, and also
+test if the returned sorted array is correct and print the result from that test.

@@ -27,7 +27,7 @@ int * quick_sort_from_file(const char * fName, bool print)
 	/* Do the quicksort */
 	quick_sort(from_file, 1, size);
 
-	////Creating and initalizing the final sorted array
+	//Creating and initalizing the final sorted array
 	MergeSortArray* result = (MergeSortArray*)malloc(sizeof(MergeSortArray));
 	result->size = size;
 	result->data = (int*)malloc(size * sizeof(int));
@@ -52,7 +52,7 @@ int * quick_sort_from_file(const char * fName, bool print)
 
 void quick_sort(int* A, int p, int r)
 {
-	
+
 	if (p < r)
 	{
 		int q = partition(A, p, r);
@@ -64,8 +64,7 @@ void quick_sort(int* A, int p, int r)
 
 int partition(int * A, int p, int r)
 {
-	
-	int x = A[r];
+	int x = A[r]; //pivot
 	int i = p - 1;
 
 	for (int j = p; j <= (r-1); j++)
@@ -75,6 +74,7 @@ int partition(int * A, int p, int r)
 			i = i + 1;
 			exchange(A, j, i);
 		}
+		
 	}
 
 	exchange(A, i+1, r);

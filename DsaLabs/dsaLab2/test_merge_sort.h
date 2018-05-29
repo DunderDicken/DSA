@@ -3,7 +3,6 @@
 /* Include my files */
 #include "merge_sort.h"
 
-
 /* Include given files */
 #include "load_file.h"
 

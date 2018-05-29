@@ -69,16 +69,6 @@ void test_insertion_sort_LinkedList()
 
 	/*-------------------------------------------------------------------------------*/
 
-	fName = "sorting_problems/test-10000-2-problem";
-	sol_fName = "sorting_problems/test-10000-2-solution";
-
-	printf("Insertion sort with file \" %s \" starting: \n", fName);
-
-	sortedList = insertionSortList(fName, DONT_PRINT);
-	test_sorted_list(sortedList, fName, sol_fName);
-
-	/*-------------------------------------------------------------------------------*/
-
 	/*This one takes a long time */
 
 	/*
@@ -95,7 +85,6 @@ void test_insertion_sort_LinkedList()
 	printf("END OF TEST_INSERTION_SORT WITH LINKED LIST \n");
 	printf("////////////////////////////////////////////////// \n");
 
-	
 }
 
 /* insertion sort test function with Array */

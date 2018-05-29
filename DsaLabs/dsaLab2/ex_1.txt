@@ -15,5 +15,5 @@ handling the printing correctly, but it seems to be working correclty.
 
 The sorting function has a flag, if the flag is set to TRUE it will print the numbers before and after
 sorting. If the flag is set to FALSE when the sorting function is called, it will only display
-the result of the test, the "the_sorted_list()" test.
+the result of the test, that is, the "the_sorted_list()" test.
 

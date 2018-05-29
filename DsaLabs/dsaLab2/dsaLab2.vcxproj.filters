@@ -94,5 +94,14 @@
     <Text Include="ex_5.txt">
       <Filter>Resource Files</Filter>
     </Text>
+    <Text Include="ex_6.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="ex_7.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="ex_8.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
   </ItemGroup>
 </Project>

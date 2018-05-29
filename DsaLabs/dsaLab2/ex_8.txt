@@ -1,0 +1,30 @@
+
+EXERCISE 8.
+Asymptotic Complexity of Sorting Algorothms.
+
+
+Choose the best algorithm (among Insertion Sort, Merge Sort and Quick Sort) to use in the
+following cases:
+
+• The input array is sorted in ascending order;
+
+Insertion sort, best case is O(n) and occurs when the array is already sorted in correct order.
+
+
+• The input array is sorted in descending order;
+
+Merge sort, which has the best worst-case complexity, (H)(nLogn).
+
+
+• All elements in the array are the same;
+
+Insertion  sort, all elements are sorted so no swaps has to be made, this is the best case
+with a complexity of O(n).
+
+
+
+• You know nothing about the elements in the input array
+
+Merge sort, which has the best worst-case complexity, (H)(nLogn)
+
+
