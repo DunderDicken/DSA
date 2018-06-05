@@ -18,6 +18,20 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="testOperations.c" />
+    <ClCompile Include="BinarySearchTree.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="BinarySearchTree.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ex_1.txt" />
+    <Text Include="ex_2.txt" />
+    <Text Include="ex_3.txt" />
+    <Text Include="ex_4.txt" />
+    <Text Include="ex_5.txt" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{4358D9B7-9697-4D86-8A98-F980A388473A}</ProjectGuid>

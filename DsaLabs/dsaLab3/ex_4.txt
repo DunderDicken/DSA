@@ -1,0 +1,10 @@
+
+EXERCISE 4.
+Insertion and Delteion.
+
+The re-drawn tree is in the file "ReDrawn Tree.JPG"
+
+The dynamic set operations: transplant, insert, delete are implemented in 
+"BinarySearchTree.c" and "BinarySearchTree.h"
+
+The tests for de opeartions are described in Exercise 1 ( ex_1.txt ).

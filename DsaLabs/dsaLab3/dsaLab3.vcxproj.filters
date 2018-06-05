@@ -14,4 +14,34 @@
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="BinarySearchTree.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="testOperations.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="BinarySearchTree.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ex_1.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="ex_2.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="ex_3.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="ex_4.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="ex_5.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+  </ItemGroup>
 </Project>

@@ -1,0 +1,9 @@
+
+EXERCISE 5.
+Sorting.
+
+I did this exercise with the inorder tree walk algorithm.
+
+- The inorder tree walk function is implemented in "BinarySearchTree.c"
+
+The tests for de algorithm are described in Exercise 1 ( ex_1.txt ).

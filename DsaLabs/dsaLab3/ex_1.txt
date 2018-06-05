@@ -1,0 +1,62 @@
+
+EXERCISE 1.
+Testing.
+
+I Collected all the test fot the different exercises here:
+- The tests for all the operations are implemented in "testOperations.c"
+
+Tests for:
+
+*/---------------------------------------------------------------------------------------------------------*/
+EXERCISE 2:
+
+This test uses the function "isTreeEmpty()", wich returns true if the Tree is empty.
+
+*/---------------------------------------------------------------------------------------------------------*/
+EXERCISE 3:
+
+I wrote some simple functions to test the different operations:
+In the Main function I declare min and max values, to compare with later, these are inserted to the Tree.
+I also create an array "numbers[]" with somewhat random numbers between min and max, these are inserted
+to the tree.
+
+Test for tree_Search operation:
+- In test_Search()
+Tests the Search operations for all the keys in numbers[], record if all returned values are correct and
+prints the result.
+
+Test for Minimum and Maximum:
+- in test_Min_Max()
+Test if tree_minimum() and tree_maximum returns the known min- and max-values, prints result.
+
+Test for Successor operation:
+- in test_Successor()
+Createas a known successor by adding 1 to the known root key-value and inserts it to the tree.
+Check if tree_successor() returns correct value, prints result.
+
+*/---------------------------------------------------------------------------------------------------------*/
+EXERCISE 4:
+transplant, insert, delete 
+
+the test for Insert is already tested in exercise 3. But it is implemented in 
+"test_Insert()". It inserts all the numbers from the array numbers[] into the tree.
+Then i checks if the tree is still empty after inserting and prints the result.
+
+The transplant function is tested via the delete function, I did not write a separate 
+test for it.
+
+The delete function in "test_Delete()" is tested by inserting a known element to the tree, then I search the
+tree to verify that it exists. The I delete it and try to search for it again. The test
+prints the result.
+
+
+*/---------------------------------------------------------------------------------------------------------*/
+EXERCISE 5:
+sorting.
+
+The algorithm is tested in the function "Inorder_tree_walk()"
+
+It creates a new tree, inserts the given array to it and then calls the
+"in_order_tree_walk()" function. To test this I use the same array as in all the other tests,
+but it will accept any array.
+

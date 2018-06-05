@@ -1,0 +1,26 @@
+
+Exercise 3.
+Querying a binary search tree.
+
+Write the sequence of visit keys, in the tree depicted above, for the following dynamic operations:
+
+search(6):
+10->7->3->6
+
+minimum():
+10->7->3->1
+
+maximum():
+10->20->100
+
+successor (6):
+6->3->7
+
+Implement the dynamic set operations: search, minimum, maximum and successor as depicted in
+the book chapter 12.2:
+
+- The operations are implemented in "BinarySearchTree.c"
+- The tests for all the operations are implemented in "testOperations.c"
+- The tests for de opeartions are described in Exercise 1 ( ex_1.txt ).
+
+

@@ -1,0 +1,8 @@
+
+Exercise 2.
+Binary Search Tree.
+
+-	The Binary Search Tree (BST) is implemented in the files "BinarySearchTree.c" and "BinarySearchTree.h"
+-	The test is done in "testOpreations.c"
+
+This test uses the function "isTreeEmpty()", wich returns true if the Tree is empty.
