@@ -59,5 +59,5 @@ ListElement* successor(List* list, ListElement* listElement);
 //Returns a pointer to the next smaller element from given element in a list
 ListElement* predecessor(List* list, ListElement* listElement);
 
-//Prints the list
+//Prints the list from nil.next to nil
 void print_list(List * list);
