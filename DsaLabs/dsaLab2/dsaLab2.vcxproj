@@ -35,6 +35,7 @@
     <ClInclude Include="..\DsaLabs\LinkedList.h" />
     <ClInclude Include="insertion_sort_array.h" />
     <ClInclude Include="insertion_sort_linkedList.h" />
+    <ClInclude Include="LinkedList.h" />
     <ClInclude Include="load_file.h" />
     <ClInclude Include="merge_sort.h" />
     <ClInclude Include="quick_sort.h" />

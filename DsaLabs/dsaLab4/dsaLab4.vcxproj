@@ -123,6 +123,10 @@
     <ClInclude Include="Graph.h" />
     <ClInclude Include="LinkedList.h" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="ex_1.txt" />
+    <Text Include="ex_2t.txt" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

@@ -9,7 +9,7 @@
 int main(int argc, char* argv[])
 {
 
-	int numOfVertices = 5;
+	int numOfVertices = 6;
 
 	Graph* gUndirected = createGraph(numOfVertices);
 
@@ -29,13 +29,31 @@ int main(int argc, char* argv[])
 	printGraph(gUndirected);
 	printf("Number of edges in Undirected graph: %d \n", *getNumEdges(gUndirected));
 	
+
+	for (int i = 0; i < gUndirected->numVertices; i++)
+	{
+		List* neghbors = getNeighbors(gUndirected, i);
+		printf("Print neighbors of %d: \n", i);
+		print_list(neghbors);
+
+	}
+	/*
 	List* neghbors = getNeighbors(gUndirected, 0);
 	printf("Print neighbors of 0: \n");
 	print_list(neghbors);
 
-	neghbors = getNeighbors(gUndirected,3);
+	neghbors = getNeighbors(gUndirected, );
 	printf("Print neighbors of 3: \n");
 	print_list(neghbors);
+
+	neghbors = getNeighbors(gUndirected, 3);
+	printf("Print neighbors of 3: \n");
+	print_list(neghbors);
+
+	neghbors = getNeighbors(gUndirected,3);
+	printf("Print neighbors of 3: \n");
+	print_list(neghbors); 
+	*/
 
 	/*Graph* directed = createGraph(numOfVertices);
 

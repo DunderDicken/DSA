@@ -48,10 +48,10 @@ int* getNumEdges(Graph* G);
 //Returns all vertices connected to node v with any edge
 List* getNeighbors(Graph* G, int v);
 
-//Returns all vertices connected to node v with any edge
+//Returns all vertices connected to node v with any edge <-- fel
 List* getInNeighbors(Graph* G, int v);
 
-//Returns all vertices connected to node v with any edge
+//Returns all vertices connected to node v with any edge <-- fel
 List* getOutNeighbors(Graph* G, int v);
 
 //Creates a directed edge from src to dst

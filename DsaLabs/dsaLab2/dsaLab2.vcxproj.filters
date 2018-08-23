@@ -77,6 +77,9 @@
     <ClInclude Include="test_quick_sort.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="LinkedList.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ex_1.txt">
