@@ -12,7 +12,7 @@
 //Represents a Node in a adjacency list
 typedef struct Adjacency_List_Node {
 
-	int vertex;
+	int vertex; //Data or Key of node
 	int weight;
 	struct Adjacency_List_Node* next;
 	
@@ -29,7 +29,6 @@ typedef struct Adjacency_List {
 //A graph is a array of adjacency lists
 typedef struct Graph_data_structure {
 
-	bool isDirected;
 	int numVertices; // The size of the graph, number of vertices
 	int numEdges; //Number of edges in the graph
 	AdjList* array;

@@ -2,7 +2,6 @@
 #include "Graph.h"
 
 
-
 int * getNumVertices(Graph * G)
 {
 	int* numOfVertices = malloc(sizeof(int));
@@ -21,37 +20,70 @@ int* getNumEdges(Graph * G)
 
 List * getNeighbors(Graph * G, int v)
 {
-	List* list = createList();
+	List* neighbors = createList();
 
-	if (G->isDirected)
+	List* in = getInNeighbors(G, v);
+
+	printf("In list of %d: \n",v);
+	print_list(in);
+
+	List* out = getOutNeighbors(G, v);
+	printf("Out list of %d: \n",v);
+	print_list(out);
+
+	/*AdjListNode* tmp = G->array[v].head;
+
+	while (tmp != NULL)
 	{
-		return NULL;
+		ListElement* listElement = newListElementWithKey(tmp->vertex);
+		insert(neighbors, listElement);
+
+		tmp = tmp->next;
 	}
-	else
-	{
+*/
+	return neighbors;
 
-		AdjListNode* tmp = G->array[v].head;
-
-		while (tmp)
-		{
-			ListElement* listElement = newListElementWithKey(tmp->vertex);
-			insert(list, listElement);
-
-			tmp = tmp->next;
-		}
-
-		return list;
-	}
 }
 
 List * getInNeighbors(Graph * G, int v)
 {
-	return NULL;
+	List* inNeighbors = createList();
+
+	//Go through all vertices
+	for (int i = 0; i < G->numVertices; i++)
+	{
+
+		AdjListNode* tmp = G->array[i].head;
+
+		while (tmp != NULL)
+		{
+			if (tmp->vertex == v)
+			{
+				ListElement* listElement = newListElementWithKey(i);
+				insert(inNeighbors, listElement);
+			}
+			tmp = tmp->next;
+		}
+
+	}
+	return inNeighbors;
 }
 
 List * getOutNeighbors(Graph * G, int v)
 {
-	return NULL;
+	List* outNeighbors = createList();
+
+	AdjListNode* tmp = G->array[v].head;
+
+	while (tmp != NULL)
+	{
+		ListElement* listElement = newListElementWithKey(tmp->vertex);
+		insert(outNeighbors, listElement);
+
+		tmp = tmp->next;
+	}
+
+	return outNeighbors;
 }
 
 void addDirectedEdge(Graph * G, int src, int dst)
@@ -59,9 +91,6 @@ void addDirectedEdge(Graph * G, int src, int dst)
 	AdjListNode* newNode = newAdjListNode(dst);
 	newNode->next = G->array[src].head;
 	G->array[src].head = newNode;
-
-	//Mark G as directed
-	G->isDirected = true;
 
 	//Increase number of edges in graph
 	G->numEdges++;
@@ -79,9 +108,6 @@ void addUndirectedEdge(Graph * G, int v1, int v2)
 	newNode->next = G->array[v2].head;
 	G->array[v2].head = newNode;
 
-	//Mark G as undirected
-	G->isDirected = false;
-
 	//Increase number of edges in graph
 	G->numEdges++;
 }
@@ -91,7 +117,6 @@ Graph * createGraph(int n)
 	Graph* graph = (Graph*)malloc(sizeof(Graph));
 	graph->numVertices = n;
 	graph->numEdges = 0;
-	graph->isDirected = false;
 
 	graph->array = (AdjList*)malloc(n * sizeof(AdjList));
 
@@ -120,14 +145,14 @@ void printGraph(Graph * G)
 	for (int i = 0; i < G->numVertices; i++)
 	{
 		AdjListNode* tmp = G->array[i].head;
-		printf("%d: head", i);
+		printf("%d: ", i);
 
 		while (tmp)
 		{
 			printf("-> %d", tmp->vertex);
 			tmp = tmp->next;
 		}
-		printf("-> NULL \n");
+		printf(" \n");
 	}
 }
 

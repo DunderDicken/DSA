@@ -6,12 +6,14 @@
 #include "LinkedList.h"
 #include "Graph.h"
 
+#define NUM_OF_VERTICES 4
+
 int main(int argc, char* argv[])
 {
-
+	/*
 	int numOfVertices = 6;
 
-	Graph* gUndirected = createGraph(numOfVertices);
+	/*Graph* gUndirected = createGraph(numOfVertices);
 
 	printf("Number of vertices in Undirected graph: %d \n", *getNumVertices(gUndirected));
 	printf("Number of edges in Undirected graph: %d \n", *getNumEdges(gUndirected));
@@ -19,6 +21,8 @@ int main(int argc, char* argv[])
 	printGraph(gUndirected);
 
 	addUndirectedEdge(gUndirected, 0, 1);
+	addUndirectedEdge(gUndirected, 0, 2);
+
 	addUndirectedEdge(gUndirected, 0, 2);
 	addUndirectedEdge(gUndirected, 3, 0);
 	addUndirectedEdge(gUndirected, 3, 4);
@@ -37,7 +41,7 @@ int main(int argc, char* argv[])
 		print_list(neghbors);
 
 	}
-	/*
+	
 	List* neghbors = getNeighbors(gUndirected, 0);
 	printf("Print neighbors of 0: \n");
 	print_list(neghbors);
@@ -55,30 +59,38 @@ int main(int argc, char* argv[])
 	print_list(neghbors); 
 	*/
 
-	/*Graph* directed = createGraph(numOfVertices);
+	Graph* directed = createGraph(NUM_OF_VERTICES);
 
-	addDirectedEdge(directed, 0, 1);
-	addDirectedEdge(directed, 4, 1);
+	addUndirectedEdge(directed, 0, 1);
+	
+	
+	
 
 	printGraph(directed);
 	
-	printf("Print neighbors of 0: \n");
-	print_list(getNeighbors(directed, 0)); 
+	for (int i = 0; i < directed->numVertices; i++)
+	{
+		List* neighbors = getNeighbors(directed, i);
+		printf("Print neighbors of %d: \n", i);
+		print_list(neighbors);
 
-	printf("Print INneighbors of 0: \n");
-	print_list(getInNeighbors(directed, 0));
+	}
 
-	printf("Print OutNeighbors of 0: \n");
-	print_list(getOutNeighbors(directed, 0));
+	/*for (int i = 0; i < directed->numVertices; i++)
+	{
+		List* InNeighbors = getInNeighbors(directed, i);
+		printf("Print InNeighbors of %d: \n", i);
+		print_list(InNeighbors);
 
-	printf("Print neighbors of 1: \n");
-	print_list(getNeighbors(directed, 1));
+	}
 
-	printf("Print INneighbors of 1: \n");
-	print_list(getInNeighbors(directed, 1));
+	for (int i = 0; i < directed->numVertices; i++)
+	{
+		List* outNeighbors = getOutNeighbors(directed, i);
+		printf("Print outNeighbors of %d: \n", i);
+		print_list(outNeighbors);
 
-	printf("Print OutNeighbors of 1: \n");
-	print_list(getOutNeighbors(directed, 1));*/
+	}*/
 
 	getchar();
 }
