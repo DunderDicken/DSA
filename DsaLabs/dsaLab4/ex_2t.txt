@@ -1,15 +1,27 @@
-EXERCISE 1.
-
-
-*/---------------------------------------------------------------------------------------------------------*/
 EXERCISE 2:
+Graph Connectivity
+
+-	The function 'createRandomUndirectedEdges()' is implemented in the files 'Graph.h' and 'Graph.c'
+-	The test is implemented in the function 'testGraphConnectivity()' in the file 'testGraphMatrix.c'
+-	The test is called from the main function in the file 'testGraph.c'
+
+The function 'createRandomUndirectedEdges()' creates somewhat random edges based on the sparsity value passed
+to the function. The test uses the defined value 'NUM_OF_VERTICES' and creates a Graph with that many
+vertices. The simple test checks if the Graph is connected with the function 'isConnected()' wich is implemented
+in the 'Graph.c' and 'Graph.h' files.
 
 
 
 */---------------------------------------------------------------------------------------------------------*/
-EXERCISE 3:
 
-
+Consider the following case. Graph G1 and Graph G2 have the same sparsity s, but the number
+of vertices in G1 is bigger then in G2, e.g. n1 > n2. Which of the graphs is more likely to be
+connected and why?
 
 */---------------------------------------------------------------------------------------------------------*/
-EXERCISE 4:
+ANSWER:
+
+The graph G1 is most likely to be connected. This is because G1 has more vertices, for a simple example;
+
+If the sparsity is 50%, G1 has 100 vertices and G2 has 10. Then every vertex in G1 has a chance of
+100 * 50% to get connected to another vertex, while G2 only has a 10 * 50% chance.

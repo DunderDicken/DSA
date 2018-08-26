@@ -116,22 +116,21 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Graph.c" />
-    <ClCompile Include="GraphList.c" />
     <ClCompile Include="LinkedList.c" />
     <ClCompile Include="testGraph.c" />
-    <ClCompile Include="testGraphList.c" />
     <ClCompile Include="testGraphMatrix.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Graph.h" />
-    <ClInclude Include="GraphList.h" />
     <ClInclude Include="LinkedList.h" />
-    <ClInclude Include="testGraphList.h" />
     <ClInclude Include="testGraphMatrix.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="ex_1.txt" />
     <Text Include="ex_2t.txt" />
+    <Text Include="ex_3.txt" />
+    <Text Include="ex_4.txt" />
+    <Text Include="ex_5.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

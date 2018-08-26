@@ -2,6 +2,8 @@
 
 /*INCLUDE MY FILES*/
 #include "LinkedList.h"
-#include "GraphList.h"
+#include "Graph.h"
 
 void testGraphMatrix();
+
+void testGraphConnectivity();

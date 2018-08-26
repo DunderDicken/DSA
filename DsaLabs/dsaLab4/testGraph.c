@@ -13,10 +13,11 @@
 
 int main(int argc, char* argv[])
 {
-	//testGraphList();
+	//Test for Execrcise 1 
+	//testGraphMatrix();
 
-	testGraphMatrix();
-
+	//Test for Excercise 2
+	testGraphConnectivity();
 
 	getchar();
 }

@@ -1,0 +1,16 @@
+EXERCISE 3:
+Detetcting cycles
+
+*/---------------------------------------------------------------------------------------------------------*/
+
+	How can depth-first search be used to detect whether a directed graph contains a cycle?
+
+*/---------------------------------------------------------------------------------------------------------*/
+
+This can be done by classification of the edges. This is a property of DFS, it can detect
+and classify different kinds of edges. Specifically for detetecing cycles is so called
+"Back Edges". If a DFS on a directed graph yeilds no back edges, the graph is acyclic.
+
+A back edge is detected if a search reaches another 'grey-marked' vertex. A DFS always
+explores from the deepest grey-marked vertex, so if it reaches another grey-marked
+vertex it has reached an ancestor or found a self-loop.

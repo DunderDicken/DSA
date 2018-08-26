@@ -1,15 +1,16 @@
 EXERCISE 1.
+Graph Data strucuture
+
+-	The Data structure is implemented in the files 'Graph.h' and 'Graph.c'.
+-	The test is implemneted in the  files 'testGraphMatrix.h' and 'testGraphMatrix.c'.
+-	The tests is implemented in the function 'testGraphMatrix()'. 
+-	These test is called from the Main function in the 'testGraph.c' file.
+-	Data structure uses the Linked List from earlier excersises ('LinkedList.c').
 
 
-*/---------------------------------------------------------------------------------------------------------*/
-EXERCISE 2:
+The tests for the funtions in the data structures are simple. The test function in
+'testGraphMatrix()' uses the defined value 'NUM_OF_VERTICES' and creates a Graph with that many
+vertices. Then it does all functions and check that expected values are returned. Three edges
+are added to the graph. There is one test with a directed Graph and one with a undirected graph.
 
 
-
-*/---------------------------------------------------------------------------------------------------------*/
-EXERCISE 3:
-
-
-
-*/---------------------------------------------------------------------------------------------------------*/
-EXERCISE 4:
