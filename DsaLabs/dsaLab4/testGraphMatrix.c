@@ -1,9 +1,8 @@
 
 /*INCLUDE MY FILES*/
 #include "testGraphMatrix.h"
-
-#define NUM_OF_VERTICES 5
-
+#define NUM_OF_VERTICES 3
+ 
 void testGraphMatrix() {
 
 	/* Test for undirected graph */
@@ -143,10 +142,19 @@ void testGraphMatrix() {
 	}
 	printf("\n\n");
 
+
+	printf("////////////////////////////////////////////////////// \n");
+	printf("END OF TEST FOR EXCERSIE 1\n");
+	printf("////////////////////////////////////////////////////// \n");
 }
 
 void testGraphConnectivity()
 {
+	/* Test for graph connectivity */
+	printf("////////////////////////////////////////////////////// \n");
+	printf("TEST FOR GRAPH CONNECTIVITY: \n");
+	printf("////////////////////////////////////////////////////// \n");
+
 	Graph* G = createGraph(NUM_OF_VERTICES);
 	
 	printf("Number of nodes in  Graph: %d \n", *getNumVertices(G));
@@ -159,5 +167,70 @@ void testGraphConnectivity()
 
 	printf("Number of edges in Graph after: %d \n", *getNumEdges(G));
 	printf("isConnected returned: %d \n", isConnected(G));
+
+	printf("////////////////////////////////////////////////////// \n");
+	printf("END OF TEST FOR GRAPH CONNECTIVITY: \n");
+	printf("////////////////////////////////////////////////////// \n");
 		
+}
+
+void testDFS()
+{
+	/* Test for DFS */
+	printf("////////////////////////////////////////////////////// \n");
+	printf("TEST FOR DFS: \n");
+	printf("////////////////////////////////////////////////////// \n");
+	Graph* G = createGraph(3);
+	printGraph(G);
+
+	printf("Add edges: \n 1->2 \n 2->3 \n");
+
+	addDirectedEdge(G, 1, 2);
+	addDirectedEdge(G, 2, 3);
+	printGraph(G);
+
+	DFS(G);
+
+	printf("DFS Gives: \n");
+
+	printGraphTimes(G);
+
+	printf("////////////////////////////////////////////////////// \n");
+	printf("END OF TEST FOR DFS: \n");
+	printf("////////////////////////////////////////////////////// \n");
+}
+
+void testAddEdgeCost()
+{
+	Graph* G = createGraph(NUM_OF_VERTICES);
+
+	/*printf("Add edges: \n 1->2 \n 1-> 3 \n");
+
+	addDirectedEdge(G, 1, 2);
+	addDirectedEdge(G, 1, 3);*/
+
+	double sparsity = 1;
+	createRandomUndirectedEdges(G, sparsity);
+	printGraph(G);
+
+	printf("Add edge cost from 1->2 between 1 and 10.\n");
+	createDirectedEdgeRandomCost(G, 1, 2, 1, 10);
+	printGraph(G);
+
+	List* shortest = dijkstra(G, 0);
+	print_list(shortest);
+	
+}
+
+void test()
+{
+	printf("THIS IS TEST! \n\n");
+
+	Graph* G = createGraph(5);
+
+	for (int i = 0; i < G->NumOfNodes; i++)
+	{
+		printf("%d \n", G->matrix[i]->key);
+	}
+
 }

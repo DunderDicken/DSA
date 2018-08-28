@@ -1,0 +1,22 @@
+EXERCISE 5:
+The Shortest Path
+
+
+
+
+The 'createDirectedEdge...()' creates a driected edge from src to dst and gives it a random cost.
+One note is that because my random function uses time to generate all the numbers, all edges seems
+to get the same weight, but it is a new value everytime the program runs. I donät know how to make 
+it more random.
+
+I used Dijkstra's algorithm for this is excercise. Dijkstra's can solve SSSPP on graphs
+with weighted directed graphs if the weights are nonnegative and this fits our problem
+perfectly. 
+*/---------------------------------------------------------------------------------------------------------*/
+
+
+
+*/---------------------------------------------------------------------------------------------------------*/
+
+ 
+ 

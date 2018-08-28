@@ -1,6 +1,7 @@
 /*INCLUDES*/
 #include <stdio.h>
 #include <stdlib.h>
+ 
 
 /*INCLUDE MY FILES*/
 #include "LinkedList.h"
@@ -13,11 +14,19 @@
 
 int main(int argc, char* argv[])
 {
-	//Test for Execrcise 1 
+	////Test for Execrcise 1 
 	//testGraphMatrix();
 
-	//Test for Excercise 2
-	testGraphConnectivity();
+	////Test for Excercise 2
+	//testGraphConnectivity();
+
+	////Test for excercise 4
+	//testDFS();
+
+	////Test for EX 5
+	//testAddEdgeCost();
+
+	test();
 
 	getchar();
 }

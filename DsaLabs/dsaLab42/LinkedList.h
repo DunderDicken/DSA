@@ -46,7 +46,7 @@ insert(List* list, ListElement* listElement);
 ListElement* listSearch(List* list, int k);
 
 //Deletes element listElement from given list
-deleteElement(List* list, ListElement* listElement);
+void deleteElement(List* list, ListElement* listElement);
 
 //Returns a pointer to the element with the smalles key in the list
 ListElement* minimum(List* list);

@@ -20,8 +20,8 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{51C26F3A-76E7-406E-8056-9E8DD5D7812D}</ProjectGuid>
-    <RootNamespace>dsaLab4</RootNamespace>
+    <ProjectGuid>{B95A956E-45E3-4B8C-BD7C-A47199D7C1ED}</ProjectGuid>
+    <RootNamespace>dsaLab42</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -117,17 +117,13 @@
   <ItemGroup>
     <ClCompile Include="Graph.c" />
     <ClCompile Include="LinkedList.c" />
-    <ClCompile Include="Queue.c" />
-    <ClCompile Include="Stack.c" />
-    <ClCompile Include="testGraph.c" />
-    <ClCompile Include="testGraphMatrix.c" />
+    <ClCompile Include="main.c" />
+    <ClCompile Include="Tests.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Graph.h" />
     <ClInclude Include="LinkedList.h" />
-    <ClInclude Include="Queue.h" />
-    <ClInclude Include="Stack.h" />
-    <ClInclude Include="testGraphMatrix.h" />
+    <ClInclude Include="Tests.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="ex_1.txt" />

@@ -1,7 +1,7 @@
 #include "LinkedList.h"
 #include <stdio.h>
 #include <stdlib.h>
- 
+
 
 List* createList()
 {
@@ -72,12 +72,16 @@ ListElement * listSearch(List * list, int k)
 	return tmp;
 }
 
-deleteElement(List * list, ListElement * listElement)
+void deleteElement(List * list, ListElement * listElement)
 {
-	listElement->prev->next = listElement->next;
-	listElement->next->prev = listElement->prev;
+	if (listElement != list->nil)
+	{
+		listElement->prev->next = listElement->next;
+		listElement->next->prev = listElement->prev;
 
-	free(listElement);
+		free(listElement);
+	}
+	
 }
 
 ListElement * minimum(List * list)

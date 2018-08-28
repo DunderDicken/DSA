@@ -1,0 +1,17 @@
+EXERCISE 4:
+Activity Manager
+
+
+-	The function 'DFS()' is implemented in the files 'Graph.h' and 'Graph.c'
+-	The test is implemented in the function 'EX4()' in the file 'test.c'
+-	The test is called from the main function in the file 'main.c'
+
+The algorithm I used for this excerice is DFS. This will give information about discovery time,finishing 
+time and predeccessor of all the nodes in the graph. These times are added to a list as recomended by 
+the book (p. 613). This test mimic the graph from the lab and the list is printed in the EX4() function.
+I don't know how to write a good test for this so i printed the results and they are correct for the graph.
+
+
+*/---------------------------------------------------------------------------------------------------------*/
+
+

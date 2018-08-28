@@ -1,9 +1,18 @@
 EXERCISE 4:
-Detetcting cycles
+Activity Manager
+
+
+-	The function 'DFS()' is implemented in the files 'Graph.h' and 'Graph.c'
+-	The test is implemented in the function 'testDFS()' in the file 'testGraphMatrix.c'
+-	The test is called from the main function in the file 'testGraph.c'
+
+The algorithm I choose to use for this excerice is DFS. This will give information about discovery time and
+finishing time of all the nodes in the graph. These times can then be used to make a topoligical sort
+of the graph which can be used to show the dependecies order. I did not implement the topological sort
+because the DFS shows the finishing time.
 
 */---------------------------------------------------------------------------------------------------------*/
 
 
 
 */---------------------------------------------------------------------------------------------------------*/
-
